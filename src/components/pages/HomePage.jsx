@@ -52,19 +52,28 @@ export default function HomePage() {
             */
             <Slide slide={slide} isActive={index === active} />
           ))}
-        </div>
+          {/* Overlay info */}
+          <div className="absolute bottom-3 left-3 text-white space-y-2 z-20 bg-[#222222]/10 backdrop-blur-md backdrop-saturate-80 rounded-xl min-w-[250px] p-3">
+            <div className="flex gap-4 flex-row">
+              {slides.map((_, idx) => (
+                <ProgressBar
+                  progress={progress}
+                  isActive={idx === active}
+                  onClick={() => goTo(idx)}
+                />
+              ))}
+            </div>
 
-        <div className="absolute bottom-5 left-10 z-30">
-          <div className="flex gap-4">
-            {slides.map((_, idx) => (
-              <ProgressBar
-                progress={progress}
-                isActive={idx === active}
-                onClick={() => goTo(idx)}
-              />
-            ))}
+            <div>
+              <p className="text-[11px] opacity-80">{slides[active].meta}</p>
+              <h2 className="text-[14] md:text-sm font-bold max-w-lg leading-tight">
+                {slides[active].title}
+              </h2>
+            </div>
           </div>
         </div>
+
+        <div className="absolute bottom-5 left-10 z-30"></div>
       </div>
     </div>
   );

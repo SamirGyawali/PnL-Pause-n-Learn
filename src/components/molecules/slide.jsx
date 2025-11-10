@@ -20,19 +20,7 @@ const Slide = ({ slide, isActive }) => {
         className="w-full h-full object-cover rounded-xl bg-cover bg-center"
       />
 
-      {/* Overlay info */}
-      <div className="absolute bottom-10 left-10 text-white space-y-2 z-20 bg-white/10 backdrop-blur-md backdrop-saturate-80 rounded-xl min-w-[250px] p-2">
-        <p className="text-sm opacity-80">{slide.meta}</p>
-        <h2 className="text-sm md:text-sm font-bold max-w-lg leading-tight">
-          {slide.title}
-        </h2>
-        <a
-          href="#" // Replace with actual link
-          className="text-sm border-b border-white pb-2px hover:opacity-70 transition"
-        >
-          VIEW
-        </a>
-      </div>
+
     </div>
   );
 };
