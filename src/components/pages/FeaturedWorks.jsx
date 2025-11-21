@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../atoms/button";
 import { MoveRight } from "lucide-react";
-import Card from "../molecules/Card";
 import MyJustifiedLayout from "../organism/MyJustifiedLayout";
 
 
