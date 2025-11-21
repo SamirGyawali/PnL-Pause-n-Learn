@@ -1,13 +1,15 @@
 import { useState } from "react";
-import HomeView from "./components/pages/HomeView";
 import HomePage from "./components/pages/HomePage";
+import FeaturedWorks from "./components/pages/FeaturedWorks";
+import FounderStatement from "./components/molecules/FounderStatement";
 
 
 function App() {
   return (
     <div className="min-h-screen">
     <HomePage />
-    {/* <HomeView /> */}
+    <FeaturedWorks />
+    <FounderStatement />
     </div>
   );
 }
