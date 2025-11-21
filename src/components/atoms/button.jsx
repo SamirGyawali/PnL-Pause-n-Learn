@@ -1,0 +1,15 @@
+import React from "react";
+
+const Button = ({ label, icon, onClick }) => {
+  return (
+    <div
+      className="px-2.5 py-1.5 bg-neutral-400/20 text-[10px] rounded-lg flex gap-2 items-center hover:cursor-pointer hover:bg-neutral-400/30 font-medium font-mono w-fit"
+      onClick={() => onClick}
+    >
+      {label ? <span className="">{label}</span> : null}
+      {icon ? <span>{icon}</span> : null}
+    </div>
+  );
+};
+
+export default Button;
