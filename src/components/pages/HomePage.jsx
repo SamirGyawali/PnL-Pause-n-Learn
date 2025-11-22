@@ -86,7 +86,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-2 w-[240px]">
-              <h2 className="font-sans sm:text-sm md:text-lg font-bold w-full leading-tight truncate">
+              <h2 className="font-sans sm:text-sm md:text-lg font-medium w-full leading-tight truncate">
                 {slides[active].title}
               </h2>
               <p className="font-mono text-[15px] opacity-90 mt-1">
