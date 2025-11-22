@@ -73,7 +73,7 @@ export default function HomePage() {
             <Slide slide={slide} isActive={index === active} key={slide.id}/>
           ))}
           {/* Overlay info */}
-          <div className="absolute bottom-3 left-3 text-white space-y-2 z-20 bg-[#000000]/45 backdrop-blur-sm backdrop-saturate-80 rounded-xl min-w-[350px] p-3">
+          <div className="absolute bottom-0 left-0 sm:bottom-3 sm:left-3 space-y-2 z-20 bg-[#d6d6d6] sm:bg-[#000000]/45 sm:text-white backdrop-blur-sm backdrop-saturate-80 rounded-xl w-[inherit] sm:w-[360px] p-3">
             <div className="flex gap-4 flex-row">
               {slides.map((_, idx) => (
                 <ProgressBar
@@ -86,7 +86,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-2 w-[240px]">
-              <h2 className="font-sans sm:text-sm md:text-lg font-medium w-full leading-tight truncate">
+              <h2 className="font-sans text-sm sm:text-lg font-medium w-full leading-tight truncate">
                 {slides[active].title}
               </h2>
               <p className="font-mono text-[15px] opacity-90 mt-1">
