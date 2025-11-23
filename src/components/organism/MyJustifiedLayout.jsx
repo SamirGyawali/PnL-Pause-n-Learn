@@ -5,6 +5,9 @@ import slide3 from "../../assets/slide3.jpeg";
 import slide11 from "../../assets/slide11.jpg";
 import { useImageMeasurement } from "../../hooks/useImageMeasurement";
 import JustifiedLayout from "justified-layout";
+import { hover, motion } from "framer-motion";
+import Button from "../atoms/button";
+import { MoveRight } from "lucide-react";
 
 const items = [
   {
@@ -16,50 +19,44 @@ const items = [
   {
     id: 2,
     title: "Shenzhen Bay Culture Park",
-    meta: "PROJECT • MASTERPLAN",
+    meta: "2023 • Retreat",
     image: slide2,
   },
   {
     id: 3,
     title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
+    meta: "2024 • Fair Education",
     image: slide3,
   },
   {
     id: 4,
     title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
+    meta: "PROJECT • Pause",
     image: slide11,
   },
   {
     id: 5,
     title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
+    meta: "PROJECT • Unlearn",
     image: slide11,
   },
   {
     id: 6,
     title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
+    meta: "PROJECT • one",
     image: slide3,
   },
   {
     id: 7,
     title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
+    meta: "PROJECT • two",
     image: slide1,
   },
   {
     id: 8,
     title: "Shenzhen Bay Culture Park",
-    meta: "PROJECT • MASTERPLAN",
+    meta: "PROJECT • three",
     image: slide1,
-  },
-  {
-    id: 9,
-    title: "Shenzhen Bay Culture Park",
-    meta: "PROJECT • MASTERPLAN",
-    image: slide2,
   },
 ];
 
@@ -108,20 +105,38 @@ const MyJustifiedLayout = () => {
           measured.map((item, i) => {
             const box = layout.boxes[i];
             return (
-              <div
+              <motion.div
                 key={item.id}
                 className="absolute rounded-xl overflow-hidden cursor-pointer"
                 style={{
                   ...box,
                 }}
+                whileHover="hover"
               >
-                <img
+                <motion.img
                   src={item.image}
-                  className="w-full h-full object-cover block transition-transform duration-600 ease-out hover:scale-[1.03]"
+                  variants={{ hover: { scale: 1.03 } }}
+                  className="w-full h-full object-cover block transition-transform duration-600 ease-out"
                 />
-              </div>
+                <div className="overlay absolute inset-0 p-2 flex justify-start items-end">
+                  <motion.p
+                    initial={{ opacity: 0, x: -15, y: 10 }}
+                    variants={{ hover: { x: 0, y: 0, opacity: 1 } }}
+                    transition={{
+                      duration: 0.6,
+                    }}
+                    className="text-white font-medium text-md text-left bg-black/30 backdrop-blur-[0.5rem] px-3 py-2 rounded-lg"
+                  >
+                    {item.meta}
+                  </motion.p>
+                </div>
+              </motion.div>
             );
           })}
+      </div>
+      {/* when clicked fetch data, change state, and update the layout */}
+      <div className="flex justify-center items-center mt-15 mb-15">
+        <Button label="Load More" icon={<MoveRight strokeWidth={1.25} />} />
       </div>
     </>
   );

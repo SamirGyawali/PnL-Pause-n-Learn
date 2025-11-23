@@ -1,11 +1,23 @@
-import React from 'react'
+import React from "react";
 
 const FounderStatement = () => {
   return (
-    <div>
-      Pause n Learn facilitates a journey towards skillful living in all dimensions of life. We help people connect within, and lead a quality life based upon Right Understanding rather than Unverified pre-conditioning. This results in unconditional happiness and Inner Peace paving way to holistic success and growth.
+    <div className="mt-5 mx-7 p-8 border-t-2 border-t-black/50 flex flex-row-reverse justify-between gap-12">
+      <p className="text-6xl p-8 max-w-[60%] font-inter-light">
+        Life moves fast, and we often forget to live skillfully. It's time to
+        Pause and Learn — to find inner harmony, remember Who We Are, and awaken
+        a shift in consciousness.
+      </p>
+      <p className="flex flex-col items-start">
+        <span className="text-xl font-mono whitespace-nowrap">
+          Ankur Mehetha & Manjari Mehetha
+        </span>
+        <span className="text-xl opacity-50 font-medium">
+          Founders | Visionaries
+        </span>
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default FounderStatement
+export default FounderStatement;

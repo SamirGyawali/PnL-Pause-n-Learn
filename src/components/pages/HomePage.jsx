@@ -50,7 +50,7 @@ export default function HomePage() {
           <img
             src={logo}
             alt="logo"
-            className={`w-[20px] object-cover scale-220 translate-y-1`}
+            className={`w-[20px] mr-9 object-cover scale-220 translate-y-1`}
             style={{ transformOrigin: "center center" }}
           />
         </a>
@@ -63,14 +63,14 @@ export default function HomePage() {
       </div>
       {/* this element dictates the space and serves as the positioning anchor for all absolute elements inside 
         here we're having defined height of the parent so that the child can adapt accordingly*/}
-      <div className="stage-setter-element relative h-[calc(85svh-.75rem)] md:h-[calc(100svh-.75rem)] w-full px-3 pt-[47px] overflow-hidden">
+      <div className="stage-setter-element relative h-[calc(85svh-.75rem)] md:h-[calc(100svh-.75rem)] w-full px-3 pt-[49px] overflow-hidden">
         <div className="relative w-full h-full rounded-xl">
           {slides.map((slide, index) => (
             /* 
                 each individual slides, should occupy exact same space so that we can fade between them. 
                 this is done by taking the slide out of normal flow and stretching them to fill the stage(parent)
             */
-            <Slide slide={slide} isActive={index === active} key={slide.id}/>
+            <Slide slide={slide} isActive={index === active} key={slide.id} />
           ))}
           {/* Overlay info */}
           <div className="absolute bottom-0 left-0 sm:bottom-3 sm:left-3 space-y-2 z-20 bg-[#d6d6d6] sm:bg-[#000000]/45 sm:text-white backdrop-blur-sm backdrop-saturate-80 rounded-xl w-[inherit] sm:w-[360px] p-3">
@@ -85,7 +85,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="mt-2 w-[240px]">
+            <div className="mt-2 max-w-[300px] w-[inherit] sm:w-[240px]">
               <h2 className="font-sans text-sm sm:text-lg font-medium w-full leading-tight truncate">
                 {slides[active].title}
               </h2>
