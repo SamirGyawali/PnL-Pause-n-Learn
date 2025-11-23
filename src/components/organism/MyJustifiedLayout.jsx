@@ -58,6 +58,12 @@ const items = [
     meta: "PROJECT • three",
     image: slide1,
   },
+    {
+    id: 9,
+    title: "Shenzhen Bay Culture Park",
+    meta: "PROJECT • four",
+    image: slide2,
+  },
 ];
 
 const MyJustifiedLayout = () => {
