@@ -4,6 +4,8 @@ import FeaturedWorks from "./components/pages/FeaturedWorks";
 import FounderStatement from "./components/molecules/FounderStatement";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
+import OurWorks from "./components/molecules/OurWorks";
+import AboutUs from "./components/pages/AboutUs";
 
 function App() {
   // Initialize Lenis
@@ -22,6 +24,8 @@ function App() {
       <HomePage />
       <FeaturedWorks />
       <FounderStatement />
+      <OurWorks />
+      <AboutUs />
     </div>
   );
 }

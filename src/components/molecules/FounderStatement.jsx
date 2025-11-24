@@ -12,7 +12,7 @@ const FounderStatement = () => {
         <span className="text-xl font-mono sm:whitespace-nowrap">
           Ankur Mehetha & Manjari Mehetha
         </span>
-        <span className="text-xl opacity-50 font-medium">
+        <span className="text-xl opacity-50 font-mono">
           Founders | Visionaries
         </span>
       </p>

@@ -58,7 +58,7 @@ const items = [
     meta: "PROJECT • three",
     image: slide1,
   },
-    {
+  {
     id: 9,
     title: "Shenzhen Bay Culture Park",
     meta: "PROJECT • four",
@@ -131,7 +131,7 @@ const MyJustifiedLayout = () => {
                     transition={{
                       duration: 0.6,
                     }}
-                    className="text-white font-medium text-md text-left bg-black/30 backdrop-blur-[0.5rem] px-3 py-2 rounded-lg"
+                    className="text-white font-medium text-2xl text-left bg-black/30 backdrop-blur-[0.5rem] px-3 py-2 rounded-lg"
                   >
                     {item.meta}
                   </motion.p>
