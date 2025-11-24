@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import slide2 from "../../assets/slide2.jpg";
 import slide11 from "../../assets/slide11.jpg";
 
-import { MoveRight } from "lucide-react";
 
 const items = [
   { label: "Spritual Retreats", image: slide11 },
@@ -15,7 +14,7 @@ const OurWorks = () => {
   return (
     <div className="p-8 mt-39 sm:ml-19">
       <span className="text-2xl font-inter-light block sm:mb-7">Our Works</span>
-      <div className="flex flex-col sm:flex-row mt-2 gap-x-3 aspect-[6/2] cursor-pointer">
+      <div className="flex flex-col sm:flex-row mt-2 gap-x-1.5 aspect-[6/2] cursor-pointer">
         {items.map((item, index) => (
           <div
             onMouseEnter={() => setHovered(index)}

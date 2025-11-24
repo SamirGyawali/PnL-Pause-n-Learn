@@ -6,7 +6,7 @@ const Button = ({ label, icon, onClick }) => {
       className="px-2.5 py-1.5 bg-neutral-400/20 text-[10px] sm:text-[14px] rounded-lg flex gap-2 items-center hover:cursor-pointer hover:bg-neutral-400/30 font-mono w-fit"
       onClick={() => onClick}
     >
-      {label ? <span className="">{label}</span> : null}
+      {label ? <span>{label}</span> : null}
       {icon ? <span>{icon}</span> : null}
     </div>
   );
