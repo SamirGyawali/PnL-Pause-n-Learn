@@ -32,10 +32,10 @@ const OurWorks = () => {
               alt=""
               className="object-cover w-full h-full"
             />
-            <span className="absolute text-3xl font-inter-light bottom-2 left-2 text-white">
+            {/* <span className="absolute text-2xl font-inter-light bottom-2 left-2 text-white bg-black/30 backdrop-blur-[1rem] px-3 py-2 rounded-lg">
               {item.label}
               <MoveRight strokeWidth={1.25} className="inline-block ml-2" />
-            </span>
+            </span> */}
           </div>
         ))}
       </div>

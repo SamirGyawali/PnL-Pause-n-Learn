@@ -8,7 +8,7 @@ import logo from "../../assets/logonav.png";
 import Slide from "../molecules/slide";
 import ProgressBar from "../atoms/progressbar";
 import useSlider from "../../hooks/useSlider";
-import { PhoneIcon } from "lucide-react";
+import { Newspaper, PhoneIcon, Search, UserRound } from "lucide-react";
 import Button from "../atoms/button";
 
 const slides = [
@@ -45,7 +45,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col">
-      <div className="fixed top-0 z-99 backdrop-blur-sm w-full pt-2 pb-2 px-9 flex justify-between overflow-hidden">
+      <div className="fixed top-0 z-99 backdrop-blur-lg w-full pt-2 pb-1 px-9 flex justify-between overflow-hidden">
         <a href="#" className="font-extrabold font-sans text-[16px]">
           <img
             src={logo}
@@ -55,9 +55,13 @@ export default function HomePage() {
           />
         </a>
         <div className="flex gap-3">
-          <Button label="RETREATS" />
-          <Button label="TRAININGS" />
-          <Button label="UPDATES" />
+          <Button
+            label="UPDATES"
+            icon={<div className="w-1.5 h-1.5 bg-green-400 rounded-lg animate-pulse"> </div>}
+          />
+          <Button label="Blogs" />
+          <Button label="Login" icon={<UserRound size={15} />} />
+          <Button icon={<Search size={15} />} />
           <Button icon={<PhoneIcon size={11} fill="#1a1a1a" stroke="0" />} />
         </div>
       </div>
@@ -86,7 +90,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-2 max-w-[300px] w-[inherit] sm:w-[240px]">
-              <h2 className="font-sans text-sm sm:text-lg font-medium w-full leading-tight truncate">
+              <h2 className="font-inter-medium text-sm sm:text-lg font-medium w-full leading-tight truncate">
                 {slides[active].title}
               </h2>
               <p className="font-mono text-[15px] opacity-90 mt-1">
