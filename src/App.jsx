@@ -20,7 +20,7 @@ function App() {
   requestAnimationFrame(raf);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mb-[80px]">
       <HomePage />
       <FeaturedWorks />
       <FounderStatement />
