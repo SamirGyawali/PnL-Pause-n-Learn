@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import slide2 from "../../assets/slide2.jpg";
 import slide11 from "../../assets/slide11.jpg";
 
-
 const items = [
   { label: "Spritual Retreats", image: slide11 },
   { label: "Online Programs", image: slide11 },
@@ -13,18 +12,22 @@ const OurWorks = () => {
   const [hovered, setHovered] = useState(null);
   return (
     <div className="p-8 mt-39 sm:ml-19">
-      <span className="text-2xl font-inter-light block sm:mb-7">Our Works</span>
-      <div className="flex flex-col sm:flex-row mt-2 gap-x-1.5 aspect-[6/2] cursor-pointer">
+      <span className="text-3xl font-inter-light block sm:mb-7 text-neutral-600">
+        Our Works Span
+      </span>
+      <div className="flex flex-col sm:flex-row mt-2 gap-1.5 aspect-[6/2] cursor-pointer">
         {items.map((item, index) => (
           <div
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}
-            className="relative transition-all duration-[900ms] ease-in-out overflow-hidden rounded-xl"
+            className={`relative transition-all duration-[900ms] ease-in-out overflow-hidden rounded-xl ${
+              hovered === null
+                ? "sm:w-[33%]"
+                : hovered === index
+                ? "sm:w-[70%]"
+                : "sm:w-[30%]"
+            }`}
             key={index}
-            style={{
-              width:
-                hovered === null ? "33%" : hovered === index ? "70%" : "30%",
-            }}
           >
             <img
               src={item.image}

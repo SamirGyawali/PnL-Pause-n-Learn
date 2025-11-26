@@ -7,7 +7,7 @@ const Button = ({ label, icon, onClick }) => {
       onClick={() => onClick}
     >
       {label ? <span>{label}</span> : null}
-      {icon ? <span>{icon}</span> : null}
+      {icon ? <span className="-translate-y-[1.5px]">{icon}</span> : null}
     </div>
   );
 };
