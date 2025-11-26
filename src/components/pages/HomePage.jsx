@@ -51,7 +51,6 @@ export default function HomePage() {
             src={logo}
             alt="logo"
             className={`w-[20px] mr-9 object-cover scale-220 translate-y-1`}
-            style={{ transformOrigin: "center center" }}
           />
         </a>
         <div className="flex gap-3">

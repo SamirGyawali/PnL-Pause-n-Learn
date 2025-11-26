@@ -6,6 +6,7 @@ import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import OurWorks from "./components/molecules/OurWorks";
 import AboutUs from "./components/pages/AboutUs";
+import Footer from "./components/organism/Footer";
 
 function App() {
   // Initialize Lenis
@@ -20,12 +21,13 @@ function App() {
   requestAnimationFrame(raf);
 
   return (
-    <div className="min-h-screen mb-[80px]">
+    <div className="min-h-screen">
       <HomePage />
       <FeaturedWorks />
       <FounderStatement />
       <OurWorks />
       <AboutUs />
+      <Footer />
     </div>
   );
 }

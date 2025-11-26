@@ -20,7 +20,7 @@ const PnLTeams = () => {
           <Button label="OUR PEOPLE" icon={<MoveRight size={14} />} />
         </div>
       </div>
-      <div className="overflow-hidden lg:w-[96vw] lg:h-[900px]">
+      <div className="overflow-hidden xl:w-[96vw] lg:h-[900px]">
         <img
           src={slide2}
           alt=""
