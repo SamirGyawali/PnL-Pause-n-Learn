@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../../public/logo2.avif";
 import Button from "../atoms/button";
-import { MoveUp } from "lucide-react";
+import { ArrowUpFromDot } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="flex flex-col items-start justify-between gap-10">
             <div className="flex flex-col gap-2">
               <span className="font-inter-medium">Works</span>
-              <div className="flex flex-row gap-2">
+              <div className="flex flex-row gap-2 flex-wrap">
                 <Button label="HOME" />
                 <Button label="TRAININGS" />
                 <Button label="RETREATS" />
@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-2">
               <span className="font-inter-medium">Office</span>
-              <div className="flex flex-row gap-2">
+              <div className="flex flex-row gap-2 flex-wrap">
                 <Button label="TRAININGS" />
                 <Button label="ABOUT US" />
                 <Button label="OUR TEAM" />
@@ -42,11 +42,13 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-2">
               <span className="font-inter-medium text-sm">PNL Updates</span>
-              <div className="flex flex-col gap-2 w-[320px]">
+              <div className="flex flex-col gap-2 w-[320px] relative">
                 <input
                   type="text"
-                  className="border-1 border-neutral-400 rounded-xl p-2"
+                  className="border-1 border-neutral-400 rounded-xl p-3 pr-26 relative"
+                  placeholder="itsme@email.com"
                 />
+                <Button label="Sign up" className="absolute right-2 bottom-12.5"/>
                 <span className="text-[11px] font-inter-regular text-neutral-500 max-w-[250px] block">
                   By signing up, you consent to receive updates email from PNL
                   and agree to our Privacy Policy.
@@ -54,15 +56,23 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-2 text-neutral-500 font-inter-regular">
-            <span>Facebook</span>
-            <span>Instagram</span>
-            <span>Youtube</span>
-            <span>X</span>
+          <div className="flex gap-4 text-neutral-500 font-inter-regular p-3">
+            <a href="#" className="hover:cursor-pointer">
+              Facebook
+            </a>
+            <a href="#" className="hover:cursor-pointer">
+              Instagram
+            </a>
+            <a href="#" className="hover:cursor-pointer">
+              Youtube
+            </a>
+            <a href="#" className="hover:cursor-pointer">
+              X
+            </a>
           </div>
         </div>
         <div>
-          <Button icon={<MoveUp size={34} strokeWidth={0.5} />} />
+          <Button icon={<ArrowUpFromDot size={34} strokeWidth={0.5} />} />
         </div>
       </div>
     </div>

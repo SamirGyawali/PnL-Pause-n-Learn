@@ -61,7 +61,7 @@ export default function HomePage() {
           <Button label="Blogs" />
           <Button label="Login" icon={<UserRound size={15} />} />
           <Button icon={<Search size={15} />} />
-          <Button icon={<PhoneIcon size={11} fill="#1a1a1a" stroke="0" />} />
+          <Button icon={<PhoneIcon size={15} />} />
         </div>
       </div>
       {/* this element dictates the space and serves as the positioning anchor for all absolute elements inside 
