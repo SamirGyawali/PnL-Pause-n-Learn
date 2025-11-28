@@ -17,10 +17,10 @@ const PnLTeams = () => {
             and designers from more than 30 regions worldwide. With office in
             Pune, PNL is powered by a team of over.
           </p>
-          <Button label="OUR PEOPLE" icon={<MoveRight size={14} />} />
+          <Button label="OUR TEAM" icon={<MoveRight size={14} />} />
         </div>
       </div>
-      <div className="overflow-hidden xl:w-[96vw] lg:h-[900px]">
+      <div className="overflonpw-hidden xl:w-[96vw] lg:h-[900px]">
         <img
           src={slide2}
           alt=""

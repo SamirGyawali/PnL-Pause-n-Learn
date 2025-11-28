@@ -45,7 +45,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col">
-      <div className="fixed top-0 z-99 backdrop-blur-lg w-full pt-2 pb-1 px-9 flex justify-between overflow-hidden">
+      <div className="fixed top-0 z-99 backdrop-blur-[3.50px] w-full pt-2 pb-1 px-9 flex justify-between overflow-hidden">        
         <a href="#" className="font-extrabold font-sans text-[16px]">
           <img
             src={logo}
