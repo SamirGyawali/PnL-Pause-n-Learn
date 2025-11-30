@@ -8,6 +8,8 @@ import JustifiedLayout from "justified-layout";
 import { motion } from "framer-motion";
 import Button from "../atoms/button";
 import { Layout, MoveRight } from "lucide-react";
+import ImageCard from "../molecules/ImageCard";
+import FeaturedWorkOverlay from "./FeaturedWorkOverlay";
 
 const items = [
   {
@@ -97,6 +99,8 @@ const MyJustifiedLayout = () => {
         )
       : null;
 
+  const [selectedWork, setSelectedWork] = useState(null);
+
   return (
     <>
       <div
@@ -112,35 +116,12 @@ const MyJustifiedLayout = () => {
             // gives the measurements for each item, top, left, right like this
             const boxStyle = layout.boxes[i];
             return (
-              <motion.div
+              <ImageCard
                 key={item.id}
-                className="absolute rounded-xl overflow-hidden cursor-pointer"
-                style={{
-                  ...boxStyle,
-                }}
-                whileHover="hover"
-              >
-                <motion.img
-                  src={item.image}
-                  variants={{ hover: { scale: 1.03 } }}
-                  className="w-full h-full object-cover block transition-transform duration-600 ease-out"
-                />
-                <div className="overlay absolute inset-0 p-2 flex justify-start items-end">
-                  <motion.p
-                    initial={{ opacity: 0, x: -15, y: 10 }}
-                    variants={{ hover: { x: 0, y: 0, opacity: 1 } }}
-                    transition={{
-                      duration: 0.6,
-                    }}
-                    className="text-white font-medium text-lg text-left bg-black/30 backdrop-blur-[0.5rem] px-3 py-2 rounded-lg tracking-wide"
-                  >
-                    {item.meta}
-                    <span className="text-sm block font-ibm-mono-regular tracking-widest">
-                      2025 JUNE
-                    </span>
-                  </motion.p>
-                </div>
-              </motion.div>
+                cardStyle={boxStyle}
+                data={item}
+                onClick={() => setSelectedWork(item)}
+              />
             );
           })}
       </div>
@@ -148,6 +129,14 @@ const MyJustifiedLayout = () => {
       <div className="flex justify-center items-center mt-15 mb-15">
         <Button label="Load More" icon={<MoveRight strokeWidth={1.25} />} />
       </div>
+
+      {selectedWork ? (
+        <FeaturedWorkOverlay
+          onClose={() => {
+            setSelectedWork(null);
+          }}
+        />
+      ) : null}
     </>
   );
 };
