@@ -58,8 +58,8 @@ export default function HomePage() {
             label="UPDATES"
             icon={<div className="w-1.5 h-1.5 bg-green-400 rounded-lg animate-pulse"> </div>}
           />
-          <Button label="Blogs" />
-          <Button label="Login" icon={<UserRound size={15} />} />
+          <Button label="BLOGS" />
+          <Button label="LOGIN" icon={<UserRound size={15} />} />
           <Button icon={<Search size={15} />} />
           <Button icon={<PhoneIcon size={15} />} />
         </div>
@@ -92,7 +92,7 @@ export default function HomePage() {
               <h2 className="font-inter-medium text-sm sm:text-lg font-medium w-full leading-tight truncate">
                 {slides[active].title}
               </h2>
-              <p className="font-mono text-[15px] opacity-90 mt-1">
+              <p className="font-ibm-mono-regular text-[13px] opacity-90 mt-1">
                 {slides[active].meta}
               </p>
             </div>

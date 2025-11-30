@@ -47,6 +47,24 @@
   src: url("/fonts/inter-thin.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "ibm-mono-regular";
+  font-display: swap;
+  src: url("/public/fonts/ibm-mono-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ibm-mono-semibold";
+  font-display: swap;
+  src: url("/public/fonts/ibm-mono-semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ibm-mono-bold";
+  font-display: swap;
+  src: url("/public/fonts/ibm-mono-bold.ttf") format("truetype");
+}
+
 @theme {
   --font-inter-regular: "inter-regular";
   --font-inter-light: "inter-light";
@@ -57,4 +75,7 @@
   --font-inter-medium: "inter-medium";
   --font-inter-semibold: "inter-semibold";
   --font-inter-thin: "inter-thin";
+  --font-ibm-mono-regular: "ibm-mono-regular";
+  --font-ibm-mono-semibold: "ibm-mono-semibold";
+  --font-ibm-mono-bold: "ibm-mono-bold";
 }

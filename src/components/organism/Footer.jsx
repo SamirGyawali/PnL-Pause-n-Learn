@@ -36,13 +36,12 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <span className="font-inter-medium">Office</span>
+                  <span className="font-inter-medium">Let's connect</span>
                   <div className="flex flex-row gap-2 flex-wrap">
-                    <Button label="TRAININGS" />
-                    <Button label="ABOUT US" />
+                    <Button label="CONNECT WITH US" />
+                    <Button label="SHARE YOUR STORY" />
+                    <Button label="BOOK A SESSION" />
                     <Button label="OUR TEAM" />
-                    <Button label="JOIN US" />
-                    <Button label="CONTACT" />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
