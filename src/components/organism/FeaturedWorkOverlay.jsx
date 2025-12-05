@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../atoms/button";
 import { GalleryVerticalEnd, X } from "lucide-react";
 import slide1 from "../../assets/slide1.jpg";
@@ -7,6 +7,7 @@ import slide3 from "../../assets/slide3.jpeg";
 import slide11 from "../../assets/slide11.jpg";
 import danceVideo from "../../assets/dance02.mp4";
 import useReadmore from "../../hooks/useReadmore";
+import GalleryCrousal from "./GalleryCrousal";
 
 const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
   const {
@@ -16,6 +17,8 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
     paragraphRef,
     showReadmoreButton,
   } = useReadmore();
+
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   return (
     <div className="fixed inset-0 bg-[rgba(1,1,1,.4)] backdrop-blur-[20px] w-screen md:p-2 flex items-end md:items-center justify-center z-100">
       <div className="w-full h-[95dvh] max-w-[160vh] bg-[rgb(255,255,255)] rounded-2xl p-3 backdrop-blur-[20px] md:h-[92%]">
@@ -29,6 +32,7 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
               <Button
                 label="GALLERY"
                 icon={<GalleryVerticalEnd strokeWidth="0.9" fill="#424242" />}
+                onClick={() => setIsGalleryOpen(!isGalleryOpen)}
               />
             </div>
             <span className="title text-3xl font-inter-light tracking-wide">
@@ -36,8 +40,8 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
             </span>
             <div className="meta-data flex flex-col text-neutral-400/90 text-sm font-ibm-mono-semibold">
               <span>Arunachala, India</span>
-              <span>Adaptive Reuse</span>
-              <span>2019-2024</span>
+              <span>Classical Dance</span>
+              <span>2024</span>
             </div>
             <div className="descriptions flex flex-col gap-4 items-start">
               <p
@@ -74,9 +78,18 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
               {showReadmoreButton ? (
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="flex gap-1 text-[13px] font-inter-semibold text-neutral-400 cursor-pointer"
+                  className="text-[13px] font-ibm-mono-semibold text-neutral-400 cursor-pointer group"
                 >
-                  {isOpen ? `READ LESS —` : `READ MORE +`}
+                  <span className="relative overflow-hidden inline-block">
+                    {/* Top text (initial state) */}
+                    <span className="block translate-y-0 group-hover:-translate-y-full transition duration-500 ease-in-out">
+                      {isOpen ? `READ LESS —` : `READ MORE +`}
+                    </span>
+                    {/* Bottom text (slides into place) */}
+                    <span className="block absolute left-0 top-0 translate-y-full group-hover:translate-y-0 transition duration-500 ease-in-out">
+                      {isOpen ? `READ LESS —` : `READ MORE +`}
+                    </span>
+                  </span>
                 </button>
               ) : null}
             </div>
@@ -192,6 +205,11 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
           </div>
         </div>
       </div>
+
+      {isGalleryOpen ? (
+        // wer're passing the function at onClose props
+        <GalleryCrousal onClose={() => setIsGalleryOpen(!isGalleryOpen)} />
+      ) : null}
     </div>
   );
 };
