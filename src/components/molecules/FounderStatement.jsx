@@ -9,11 +9,11 @@ const FounderStatement = () => {
         shift in consciousness.
       </p>
       <p className="flex flex-col items-start">
-        <span className="text-xl font-i sm:whitespace-nowrap">
-          Ankur Mehetha & Manjari Mehetha
+        <span className="text-md font-ibm-mono-semibold text-neutral-600 sm:whitespace-nowrap tracking-tight">
+          ANKUR MEHETHA & MANJARI MEHETHA
         </span>
-        <span className="text-xl opacity-50 font-ibm-mono-regular">
-          Founders | Visionaries
+        <span className="text-sm font-ibm-mono-semibold text-neutral-400 tracking-wide">
+          FOUNDERS | VISIONERIES
         </span>
       </p>
     </div>

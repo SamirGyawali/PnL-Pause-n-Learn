@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import slide1 from "../../assets/slide1.jpg";
 import slide2 from "../../assets/slide2.jpg";
-import slide3 from "../../assets/slide3.jpeg";
+import slide3 from "../../assets/slide3.jpeg"
 import slide11 from "../../assets/slide11.jpg";
 import { useImageMeasurement } from "../../hooks/useImageMeasurement";
 import JustifiedLayout from "justified-layout";
-import { motion } from "framer-motion";
 import Button from "../atoms/button";
-import { Layout, MoveRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import ImageCard from "../molecules/ImageCard";
 import FeaturedWorkOverlay from "./FeaturedWorkOverlay";
 
@@ -20,7 +19,7 @@ const items = [
   },
   {
     id: 2,
-    title: "Shenzhen Bay Culture Park",
+    title: "The Celestial dance",
     meta: "2023 • Retreat",
     image: slide2,
   },
@@ -135,6 +134,7 @@ const MyJustifiedLayout = () => {
           onClose={() => {
             setSelectedWork(null);
           }}
+          selectedWork={selectedWork}
         />
       ) : null}
     </>
