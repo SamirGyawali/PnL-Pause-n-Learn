@@ -13,14 +13,14 @@ import FeaturedWorkOverlay from "./FeaturedWorkOverlay";
 const items = [
   {
     id: 1,
-    title: "Breathing Cells at the Seoul Biennale",
+    title: "Breathing Cells",
     meta: "2022 • Retreat at Himalayas",
     image: slide1,
   },
   {
     id: 2,
     title: "The Celestial dance",
-    meta: "2023 • Retreat",
+    meta: "2023 • Dance",
     image: slide2,
   },
   {
@@ -55,13 +55,13 @@ const items = [
   },
   {
     id: 8,
-    title: "Shenzhen Bay Culture Park",
+    title: "Shenzhen Bay Culture Dance",
     meta: "PROJECT • three",
     image: slide1,
   },
   {
     id: 9,
-    title: "Shenzhen Bay Culture Park",
+    title: "Shenzhen Bay Culture Dance",
     meta: "PROJECT • four",
     image: slide2,
   },
