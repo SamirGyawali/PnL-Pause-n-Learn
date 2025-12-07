@@ -133,7 +133,7 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
           >
             <video
               controls
-              loop
+              // loop
               autoPlay
               muted
               src={danceVideo}
@@ -178,7 +178,7 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
               src={slide1}
               alt="image"
               className="object-cover rounded-2xl"
-            />{" "}
+            />
             <img
               src={slide1}
               alt="image"
@@ -198,7 +198,7 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
               src={slide1}
               alt="image"
               className="object-cover rounded-2xl"
-            />{" "}
+            />
             <img
               src={slide1}
               alt="image"
