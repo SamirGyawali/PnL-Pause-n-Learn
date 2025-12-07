@@ -6,8 +6,21 @@ import slide2 from "../../assets/slide2.jpg";
 import slide3 from "../../assets/slide3.jpeg";
 import slide11 from "../../assets/slide11.jpg";
 import danceVideo from "../../assets/dance02.mp4";
+// import hosanaVideo from "../../assets/hosana.mp4";
+
 import useReadmore from "../../hooks/useReadmore";
-import GalleryCrousal from "./GalleryCrousal";
+import GalleryCrousalOverlay from "./GalleryCrousalOverlay";
+import { motion } from "framer-motion";
+
+const blurOverlayVariant = {
+  initial: { opacity: 0, filter: "blur(30px)" },
+  final: { opacity: 1, filter: "blur(0px)" },
+};
+
+const whiteContainerVariant = {
+  initial: { opacity: 0, scale: 0.95 },
+  final: { opacity: 1, scale: 1 },
+};
 
 const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
   const {
@@ -20,9 +33,21 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
 
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   return (
-    <div className="fixed inset-0 bg-[rgba(1,1,1,.4)] backdrop-blur-[20px] w-screen md:p-2 flex items-end md:items-center justify-center z-100">
-      <div className="w-full h-[95dvh] max-w-[160vh] bg-[rgb(255,255,255)] rounded-2xl p-3 backdrop-blur-[20px] md:h-[92%]">
-        <div className="w-full h-full grid grid-cols-3 gap-10">
+    <motion.div
+      className="fixed inset-0 bg-[rgba(1,1,1,.4)] backdrop-blur-[20px] w-screen md:p-2 flex items-end md:items-center justify-center z-100"
+      variants={blurOverlayVariant}
+      initial="initial"
+      animate="final"
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
+      <motion.div
+        className="w-full h-[95dvh] max-w-[160vh] bg-[rgb(255,255,255)] rounded-2xl p-3 backdrop-blur-[20px] md:h-[92%]"
+        variants={whiteContainerVariant}
+        initial="initial"
+        animate="final"
+        transition={{ duration: 0.9, ease: "easeOut" }}
+      >
+        <div className="w-full h-full grid grid-cols-1 sm:grid-cols-3 gap-10">
           <div
             className="flex flex-col gap-10 overflow-y-auto overflow-x-hidden custom-scroll"
             data-lenis-prevent
@@ -45,7 +70,7 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
             </div>
             <div className="descriptions flex flex-col gap-4 items-start">
               <p
-                className="whitespace-pre-line font-inter-regular"
+                className="whitespace-pre-line font-inter-regular text-neutral-700"
                 style={isOpen ? null : paragraphStyles}
                 ref={paragraphRef}
               >
@@ -94,8 +119,9 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
               ) : null}
             </div>
           </div>
+          {/* images div below */}
           <div
-            className="images-videos rounded-2xl overflow-y-scroll overflow-x-hidden cursor-pointer flex flex-col col-span-2 gap-5"
+            className="images-videos rounded-2xl overflow-y-scroll overflow-x-hidden cursor-pointer flex flex-col sm:col-span-2 gap-5"
             data-lenis-prevent
           >
             <video
@@ -112,11 +138,15 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
               alt="image"
               className="object-cover rounded-2xl"
             />
-            <img
-              src={slide3}
-              alt="image"
-              className="object-cover rounded-2xl"
-            />
+            {/* <video
+              controls
+              loop
+              autoPlay
+              muted
+              src={hosanaVideo}
+              alt="hosana"
+              className=" object-cover rounded-2xl"
+            /> */}
             <img
               src={slide11}
               alt="image"
@@ -204,13 +234,15 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {isGalleryOpen ? (
-        // wer're passing the function at onClose props
-        <GalleryCrousal onClose={() => setIsGalleryOpen(!isGalleryOpen)} />
+        // wer'r`e passing the function at onClose props
+        <GalleryCrousalOverlay
+          onClose={() => setIsGalleryOpen(!isGalleryOpen)}
+        />
       ) : null}
-    </div>
+    </motion.div>
   );
 };
 

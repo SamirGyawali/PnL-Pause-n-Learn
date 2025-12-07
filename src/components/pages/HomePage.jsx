@@ -8,7 +8,7 @@ import logo from "../../assets/logonav.png";
 import Slide from "../molecules/slide";
 import ProgressBar from "../atoms/progressbar";
 import useSlider from "../../hooks/useSlider";
-import { Newspaper, PhoneIcon, Search, UserRound } from "lucide-react";
+import { PhoneIcon, Search, UserRound } from "lucide-react";
 import Button from "../atoms/button";
 
 const slides = [
