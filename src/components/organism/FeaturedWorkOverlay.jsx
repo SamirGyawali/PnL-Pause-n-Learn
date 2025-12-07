@@ -7,7 +7,6 @@ import slide3 from "../../assets/slide3.jpeg";
 import slide11 from "../../assets/slide11.jpg";
 import danceVideo from "../../assets/dance02.mp4";
 // import hosanaVideo from "../../assets/hosana.mp4";
-
 import useReadmore from "../../hooks/useReadmore";
 import GalleryCrousalOverlay from "./GalleryCrousalOverlay";
 import { motion } from "framer-motion";
@@ -42,6 +41,14 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
     >
       <motion.div
         className="w-full h-[95dvh] max-w-[160vh] bg-[rgb(255,255,255)] rounded-2xl p-3 backdrop-blur-[20px] md:h-[92%]"
+        drag
+        dragElastic={0.095}
+        dragConstraints={{
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
         variants={whiteContainerVariant}
         initial="initial"
         animate="final"
