@@ -37,7 +37,7 @@ const slides = [
   },
 ];
 
-export default function HomePage() {
+export default function Home() {
   const { active, progress, goTo } = useSlider(slides, 2400);
 
   return (
