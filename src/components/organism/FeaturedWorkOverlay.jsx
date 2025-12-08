@@ -42,7 +42,7 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
       <motion.div
         className="w-full h-[95dvh] max-w-[160vh] bg-[rgb(255,255,255)] rounded-2xl p-3 backdrop-blur-[20px] md:h-[92%]"
         drag
-        dragElastic={0.095}
+        dragElastic={0.04}
         dragConstraints={{
           top: 0,
           left: 0,

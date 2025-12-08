@@ -1,12 +1,10 @@
-import { useState } from "react";
-import HomePage from "./components/pages/HomePage";
-import FeaturedWorks from "./components/pages/FeaturedWorks";
-import FounderStatement from "./components/molecules/FounderStatement";
+import React from "react";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
-import OurWorks from "./components/molecules/OurWorks";
-import AboutUs from "./components/pages/AboutUs";
-import Footer from "./components/organism/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Projects from "./components/pages/Projects";
+import Layout from "./components/templates/Layout";
+import LandingPage from "./components/templates/LandingPage";
 
 function App() {
   // Initialize Lenis
@@ -21,14 +19,14 @@ function App() {
   requestAnimationFrame(raf);
 
   return (
-    <div className="min-h-screen">
-      <HomePage />
-      <FeaturedWorks />
-      <FounderStatement />
-      <OurWorks />
-      <AboutUs />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<LandingPage />} />
+          <Route path="projects" element={<Projects />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

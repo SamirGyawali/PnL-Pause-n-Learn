@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import slide2 from "../../assets/slide2.jpg";
 import slide11 from "../../assets/slide11.jpg";
 import { MoveRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const items = [
-  { label: "Spritual Retreats", image: slide11 },
-  { label: "Online Programs", image: slide11 },
-  { label: "Training Programs", image: slide11 },
+  { label: "Retreats", image: slide11 },
+  { label: "Online", image: slide11 },
+  { label: "Trainings", image: slide11 },
 ];
 
 const OurWorks = () => {
+  const navigateTo = useNavigate();
+
   const [hovered, setHovered] = useState(null);
   return (
     <div className="p-8 mt-39 sm:ml-19">
@@ -29,6 +32,9 @@ const OurWorks = () => {
                 : "sm:w-[30%]"
             }`}
             key={index}
+            onClick={() =>
+              navigateTo(`projects?category=${encodeURIComponent(item.label)}`)
+            }
           >
             <img
               src={item.image}

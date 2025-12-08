@@ -13,7 +13,7 @@ import FeaturedWorkOverlay from "./FeaturedWorkOverlay";
 const items = [
   {
     id: 1,
-    title: "Breathing Cells",
+    title: "The Celestial dance",
     meta: "2022 • Retreat at Himalayas",
     image: slide1,
   },
@@ -25,13 +25,13 @@ const items = [
   },
   {
     id: 3,
-    title: "Harbin Opera House",
+    title: "The Celestial dance",
     meta: "2024 • Fair Education",
     image: slide3,
   },
   {
     id: 4,
-    title: "Harbin Opera House",
+    title: "The Celestial dance",
     meta: "PROJECT • Pause",
     image: slide11,
   },
@@ -43,7 +43,7 @@ const items = [
   },
   {
     id: 6,
-    title: "Harbin Opera House",
+    title: "The Celestial dance",
     meta: "PROJECT • one",
     image: slide3,
   },
