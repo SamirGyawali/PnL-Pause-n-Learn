@@ -4,6 +4,8 @@ import slide3 from "../../assets/slide3.jpeg";
 import slide11 from "../../assets/slide11.jpg";
 import { useImageMeasurement } from "../../hooks/useImageMeasurement";
 import { useMasonryLayout } from "../../hooks/useMasonryLayout";
+import ImageCard from "../molecules/ImageCard";
+import { useState } from "react";
 
 const items = [
   {
@@ -85,30 +87,30 @@ const MasonryLayout = () => {
   const { containerRef, positions, containerHeight } =
     useMasonryLayout(measured);
 
+  const [selectedWork, setSelectedWork] = useState(null);
+
   return (
     <div
       ref={containerRef}
       className="masonry-container relative w-full"
-      style={{ height: `${containerHeight}px`, aspectRatio: "1433 / 2155" }}
+      style={{ height: `${containerHeight}px` }}
     >
-      {measured.map((item, i) => (
-        <div
-          key={item.id}
-          className="masonry-item absolute rounded-xl overflow-hidden cursor-pointer"
-          style={{
-            width: `${positions[i]?.width}px`,
-            top: `${positions[i]?.top}px`,
-            left: `${positions[i]?.left}px`,
-            height: `${positions[i]?.height}px`,
-          }}
-        >
-          <img
-            src={item.image}
-            alt={item.title}
-            className="w-full h-full object-cover block rounded-xl transition-transform duration-600 ease-out hover:scale-[1.03]"
+      {measured.map((item, i) => {
+        const style = {
+          width: positions[i]?.width,
+          top: positions[i]?.top,
+          left: positions[i]?.left,
+          height: positions[i]?.height,
+        };
+        return (
+          <ImageCard
+            key={i}
+            cardStyle={style}
+            data={item}
+            onClick={() => setSelectedWork(item)}
           />
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

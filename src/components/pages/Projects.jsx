@@ -2,13 +2,14 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import Button from "../atoms/button";
 import { List, Plus } from "lucide-react";
+import MasonryLayout from "../organism/MasonryLayout";
 
 const Projects = () => {
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const category = params.get("category");
   return (
-    <div className="h-[calc(85svh-.75rem)] md:h-[calc(100svh-.75rem)] w-full px-3 pt-[49px] pb-3">
+    <div className="w-full px-3 pt-[49px] pb-3">
       <div className="m-2 p-2 flex flex-col gap-5 mt-6">
         <div className="flex gap-5">
           <span className="text-4xl font-inter-light text-neutral-400 hover:cursor-pointer hover:text-neutral-900 transition-colors duration-300 ease-in-out">
@@ -37,7 +38,7 @@ const Projects = () => {
       <div className="m-2 p-2 mt-9">
         <span>{category}</span>
         <br />
-        <span>inside here will be the masonry layout to display the works</span>
+        <MasonryLayout />
       </div>
     </div>
   );
