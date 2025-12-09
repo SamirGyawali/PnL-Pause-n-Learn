@@ -3,7 +3,6 @@ import slide3 from "../../assets/park.jpg";
 import slide4 from "../../assets/snow.jpg";
 import slide5 from "../../assets/kailash.jpg";
 
-
 import { MoveRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +17,7 @@ const OurWorks = () => {
 
   const [hovered, setHovered] = useState(null);
   return (
-    <div className="p-8 mt-39 sm:ml-19">
+    <div className="p-8 mt-39 sm:ml-19 mx-15">
       <span className="text-3xl font-inter-light block text-neutral-900 sm:mb-7">
         Our work spans
       </span>
@@ -27,7 +26,7 @@ const OurWorks = () => {
           <div
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}
-            className={`relative transition-all duration-[900ms] ease-in-out ${
+            className={`relative transition-all duration-[600ms] ease-in-out ${
               hovered === null
                 ? "sm:w-[33%]"
                 : hovered === index
@@ -45,7 +44,7 @@ const OurWorks = () => {
               className="object-cover w-full h-[calc(100%-10px)] rounded-xl"
             />
             <span
-              className={`whitespace-nowrap absolute transition-opacity duration-300 ease-in-out md:text-2xl lg:text-4xl font-inter-light left-0 p-2 rounded-lg ${
+              className={`whitespace-nowrap absolute transition-opacity duration-300 ease-in-out md:text-xl lg:text-4xl font-inter-light left-0 p-2 rounded-lg ${
                 hovered === null
                   ? "opacity-100"
                   : hovered === index
