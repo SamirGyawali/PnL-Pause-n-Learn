@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import slide2 from "../../assets/slide2.jpg";
-import slide11 from "../../assets/slide11.jpg";
+import slide3 from "../../assets/park.jpg";
+import slide4 from "../../assets/snow.jpg";
+import slide5 from "../../assets/kailash.jpg";
+
+
 import { MoveRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const items = [
-  { label: "Retreats", image: slide11 },
-  { label: "Online", image: slide11 },
-  { label: "Trainings", image: slide11 },
+  { label: "Retreats", image: slide3 },
+  { label: "Online", image: slide4 },
+  { label: "Trainings", image: slide5 },
 ];
 
 const OurWorks = () => {
@@ -16,7 +19,7 @@ const OurWorks = () => {
   const [hovered, setHovered] = useState(null);
   return (
     <div className="p-8 mt-39 sm:ml-19">
-      <span className="text-2xl font-inter-light block sm:mb-7">
+      <span className="text-3xl font-inter-light block text-neutral-900 sm:mb-7">
         Our work spans
       </span>
       <div className="flex flex-col sm:flex-row mt-2 gap-12 md:gap-1.5 aspect-[6/2] cursor-pointer">
@@ -53,7 +56,7 @@ const OurWorks = () => {
               {item.label}
               <MoveRight
                 strokeWidth={1.25}
-                className={`inline-block ml-2 transition-opacity duration-300 ease-in-out ${
+                className={`inline-block ml-2 -translate-y-1 transition-opacity duration-300 ease-in-out ${
                   hovered === index ? "opacity-100" : "opacity-0"
                 }`}
               />

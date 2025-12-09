@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Navigation, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,6 +13,7 @@ import slide11 from "../../assets/slide11.jpg";
 import { MoveLeft, MoveRight } from "lucide-react";
 
 const Crousal = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <>
       <Swiper
@@ -20,13 +21,20 @@ const Crousal = () => {
           nextEl: ".custom-next",
           prevEl: ".custom-prev",
         }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        speed={600}
         modules={[Navigation, FreeMode]}
         freeMode={true}
         spaceBetween={10}
         className="mySwiper w-full h-full rounded-2xl"
       >
         <div className="flex items-center gap-6 absolute right-10 bottom-6 z-50 text-white">
-          <button className="custom-prev hover:cursor-pointer py-2.5 px-5  bg-[#383838ad] hover:bg-[#292727c9] rounded-lg">
+          <button
+            className={`custom-prev hover:cursor-pointer py-2.5 px-5 bg-[#383838ad] hover:bg-[#292727c9] rounded-lg ${
+              activeIndex === 0 ? "opacity-40 pointer-events-none" : ""
+            }`}
+            disabled={activeIndex === 0}
+          >
             {<MoveLeft strokeWidth={1} />}
           </button>
           <button className="custom-next hover:cursor-pointer py-2.5 px-5 bg-[#383838ad] hover:bg-[#292727c9] rounded-lg">
