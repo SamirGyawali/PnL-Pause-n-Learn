@@ -85,13 +85,61 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
   },
+  {
+    id: 13,
+    title: "Nebula CMS",
+    category: "Web App",
+    client: "Nebula Inc",
+    year: "2023",
+  },
+  {
+    id: 14,
+    title: "Nebula CMS",
+    category: "Web App",
+    client: "Nebula Inc",
+    year: "2023",
+  },
+  {
+    id: 15,
+    title: "Nebula CMS",
+    category: "Web App",
+    client: "Nebula Inc",
+    year: "2023",
+  },
+  {
+    id: 16,
+    title: "Nebula CMS",
+    category: "Web App",
+    client: "Nebula Inc",
+    year: "2023",
+  },
 ];
+
+const BackgroundDivVariant = {
+  rest: { opacity: 0, scale: 0.99 },
+  hovered: { opacity: 0.8, scale: 1 },
+};
+
+const TextVariants = {
+  rest: { color: "#374151" }, // gray-700
+  hovered: { color: "#ffffff" },
+};
 
 export default function ProjectListTable() {
   return (
     <div className="w-full max-w-9xl mx-auto py-4">
       {/* Header */}
-      <div className="grid grid-cols-4 px-4 py-2 font-inter-regular text-sm uppercase text-gray-900 border-b border-neutral-700">
+      <div
+        className="
+          grid grid-cols-4
+          px-4 py-2
+          font-inter-regular
+          text-sm
+          uppercase
+          text-gray-900
+          border-b border-neutral-700
+        "
+      >
         <p>Project</p>
         <p>Category</p>
         <p>Client</p>
@@ -103,20 +151,47 @@ export default function ProjectListTable() {
         {projects.map((item) => (
           <motion.div
             key={item.id}
-            className="grid grid-cols-4 px-4 py-4 cursor-pointer"
-            whileHover={{
-              scale: 1.01,
-              backgroundColor: "rgba(193, 236, 242, 0.4)",
-            }}
-            transition={{
-              duration: 0.35,
-              ease: [0.25, 0.1, 0.25, 1],
-            }}
+            className="
+              grid grid-cols-4
+              px-4 py-4
+              cursor-pointer
+              relative overflow-hidden
+            "
+            initial="rest"
+            whileHover="hovered"
+            animate="rest"
+            transition={{ type: "spring", stiffness: 100, damping: 15 }}
           >
-            <p className="font-inter-regular text-gray-700">{item.title}</p>
-            <p className=" font-inter-light text-gray-600">{item.category}</p>
-            <p className="font-inter-light text-gray-600">{item.client}</p>
-            <p className="font-inter-light text-gray-600">{item.year}</p>
+            <motion.div
+              className="absolute top-0 left-0 w-full h-full bg-green-400/90 z-0"
+              variants={BackgroundDivVariant}
+              transition={{ type: "spring", stiffness: 100, damping: 15 }}
+            />
+
+            <motion.p
+              className="relative z-10 font-inter-regular"
+              variants={TextVariants}
+            >
+              {item.title}
+            </motion.p>
+            <motion.p
+              className="relative z-10 font-inter-light"
+              variants={TextVariants}
+            >
+              {item.category}
+            </motion.p>
+            <motion.p
+              className="relative z-10 font-inter-light"
+              variants={TextVariants}
+            >
+              {item.client}
+            </motion.p>
+            <motion.p
+              className="relative z-10 font-inter-light"
+              variants={TextVariants}
+            >
+              {item.year}
+            </motion.p>
           </motion.div>
         ))}
       </div>
