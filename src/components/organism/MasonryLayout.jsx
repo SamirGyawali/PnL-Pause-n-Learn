@@ -87,6 +87,8 @@ const MasonryLayout = () => {
   const { containerRef, positions, containerHeight } =
     useMasonryLayout(measured);
 
+  // need to transport it somewhere, i don't think i can use it here
+  // i'm thinking i'm polluting this component here
   const [selectedWork, setSelectedWork] = useState(null);
 
   return (

@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Button from "../atoms/button";
-import { List, Plus } from "lucide-react";
+import { Grip, List, Plus } from "lucide-react";
 import MasonryLayout from "../organism/MasonryLayout";
+import ProjectListTable from "../organism/ProjectsListTable";
 
 const Projects = () => {
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const category = params.get("category");
+
+  const [listView, setListView] = useState(false);
   return (
     <div className="w-full px-3 pt-[49px] pb-3">
       <div className="m-2 p-2 flex flex-col gap-5 mt-6">
@@ -32,13 +35,22 @@ const Projects = () => {
             label="TYPOGRAPHY"
             icon={<Plus strokeWidth={1} size={20} />}
           />
-          <Button icon={<List strokeWidth={2} size={18} />} />
+          <Button
+            onClick={() => setListView(!listView)}
+            icon={
+              listView ? (
+                <Grip strokeWidth={2} size={18} />
+              ) : (
+                <List strokeWidth={2} size={18} />
+              )
+            }
+          />
         </div>
       </div>
       <div className="m-2 p-2 mt-9">
         <span>{category}</span>
         <br />
-        <MasonryLayout />
+        {listView ? <ProjectListTable /> : <MasonryLayout />}
       </div>
     </div>
   );
