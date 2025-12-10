@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export const projects = [
   {
@@ -115,81 +116,66 @@ export const projects = [
   },
 ];
 
-const BackgroundDivVariant = {
-  rest: { opacity: 0, scale: 0.99 },
-  hovered: { opacity: 0.8, scale: 1 },
+const BackgroundDiv = {
+  initial: { top: "-100%" },
+  hovered: { top: "0%" },
+  crossedDown: { top: "100%" },
+  crossedUp: { top: "-100%" },
 };
 
 const TextVariants = {
-  rest: { color: "#374151" }, // gray-700
+  initial: { color: "#374151" },
   hovered: { color: "#ffffff" },
+  crossedDown: { color: "#374151" },
+  crossedUp: { color: "#374151" },
 };
 
 export default function ProjectListTable() {
+  const [hoverIndex, setHoverIndex] = useState(null);
+
+  const getRowState = (i) => {
+    if (hoverIndex === null) return "initial";
+    if (i === hoverIndex) return "hovered";
+    if (i < hoverIndex) return "crossedDown"; // row before hovered → move down
+    if (i > hoverIndex) return "crossedUp"; // row after hovered → move up
+  };
+
   return (
     <div className="w-full max-w-9xl mx-auto py-4">
-      {/* Header */}
-      <div
-        className="
-          grid grid-cols-4
-          px-4 py-2
-          font-inter-regular
-          text-sm
-          uppercase
-          text-gray-900
-          border-b border-neutral-700
-        "
-      >
+      <div className="grid grid-cols-4 px-4 py-2 text-sm uppercase text-gray-900 border-b border-neutral-700">
         <p>Project</p>
         <p>Category</p>
         <p>Client</p>
         <p>Year</p>
       </div>
 
-      {/* Rows */}
       <div className="divide-y divide-neutral-200">
-        {projects.map((item) => (
+        {projects.map((item, i) => (
           <motion.div
             key={item.id}
-            className="
-              grid grid-cols-4
-              px-4 py-4
-              cursor-pointer
-              relative overflow-hidden
-            "
-            initial="rest"
+            className="grid grid-cols-4 px-4 py-4 cursor-pointer relative overflow-hidden"
+            initial="initial"
+            animate={getRowState(i)}
             whileHover="hovered"
-            animate="rest"
-            transition={{ type: "spring", stiffness: 100, damping: 15 }}
+            onHoverStart={() => setHoverIndex(i)}
+            onHoverEnd={() => setHoverIndex(null)}
+            transition={{ type: "spring", stiffness: 120, damping: 18 }}
           >
             <motion.div
-              className="absolute top-0 left-0 w-full h-full bg-green-400/90 z-0"
-              variants={BackgroundDivVariant}
-              transition={{ type: "spring", stiffness: 100, damping: 15 }}
+              className="absolute left-0 w-full h-full bg-green-400/90 z-0"
+              variants={BackgroundDiv}
             />
 
-            <motion.p
-              className="relative z-10 font-inter-regular"
-              variants={TextVariants}
-            >
+            <motion.p className="relative z-10" variants={TextVariants}>
               {item.title}
             </motion.p>
-            <motion.p
-              className="relative z-10 font-inter-light"
-              variants={TextVariants}
-            >
+            <motion.p className="relative z-10" variants={TextVariants}>
               {item.category}
             </motion.p>
-            <motion.p
-              className="relative z-10 font-inter-light"
-              variants={TextVariants}
-            >
+            <motion.p className="relative z-10" variants={TextVariants}>
               {item.client}
             </motion.p>
-            <motion.p
-              className="relative z-10 font-inter-light"
-              variants={TextVariants}
-            >
+            <motion.p className="relative z-10" variants={TextVariants}>
               {item.year}
             </motion.p>
           </motion.div>

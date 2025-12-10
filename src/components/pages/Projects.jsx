@@ -10,7 +10,7 @@ const Projects = () => {
   const params = new URLSearchParams(search);
   const category = params.get("category");
 
-  const [listView, setListView] = useState(false);
+  const [listView, setListView] = useState(true);
   return (
     <div className="w-full px-3 pt-[49px] pb-3">
       <div className="m-2 p-2 flex flex-col gap-5 mt-6">
