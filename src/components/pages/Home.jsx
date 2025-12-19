@@ -7,6 +7,7 @@ import slide11 from "../../assets/slide11.jpg";
 import Slide from "../molecules/slide";
 import ProgressBar from "../atoms/progressbar";
 import useSlider from "../../hooks/useSlider";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -38,6 +39,7 @@ const slides = [
 ];
 
 export default function Home() {
+  const NavigateTo = useNavigate();
   const { active, progress, goTo } = useSlider(slides, 2400);
 
   return (
@@ -51,7 +53,12 @@ export default function Home() {
                 each individual slides, should occupy exact same space so that we can fade between them. 
                 this is done by taking the slide out of normal flow and stretching them to fill the stage(parent)
             */
-            <Slide slide={slide} isActive={index === active} key={slide.id} />
+            <Slide
+              slide={slide}
+              isActive={index === active}
+              key={slide.id}
+              onClick={() => NavigateTo("article")}
+            />
           ))}
           {/* Overlay info */}
           <div className="absolute bottom-0 left-0 sm:bottom-3 sm:left-3 space-y-2 z-20 bg-[#d6d6d6] sm:bg-[#000000]/45 sm:text-white backdrop-blur-sm backdrop-saturate-80 rounded-xl w-[inherit] sm:w-[360px] p-3">

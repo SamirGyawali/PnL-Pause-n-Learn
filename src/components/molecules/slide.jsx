@@ -1,12 +1,13 @@
 import React from "react";
 
-const Slide = ({ slide, isActive }) => {
+const Slide = ({ slide, isActive, onClick }) => {
   return (
     <div
       key={slide.id}
-      className={`stacked-player absolute inset-0 transition-opacity duration-1000 ease-out ${
+      className={`stacked-player absolute inset-0 transition-opacity duration-1000 ease-out cursor-pointer ${
         isActive ? "opacity-100 z-10" : "opacity-0 z-0"
       }`}
+      onClick={onClick}
     >
       <img
         src={slide.image}

@@ -125,7 +125,7 @@ const BackgroundDiv = {
 
 const TextVariants = {
   initial: { color: "#374151" },
-  hovered: { color: "#ffffff" },
+  hovered: { color: "#374151" }, // change it to white for the darker color
   crossedDown: { color: "#374151" },
   crossedUp: { color: "#374151" },
 };
@@ -155,15 +155,16 @@ export default function ProjectListTable() {
             key={item.id}
             className="grid grid-cols-4 px-4 py-4 cursor-pointer relative overflow-hidden"
             initial="initial"
-            animate={getRowState(i)}
+            animate={getRowState(i)} // final state of animation
             whileHover="hovered"
             onHoverStart={() => setHoverIndex(i)}
+            
             onHoverEnd={() => setHoverIndex(null)}
-            transition={{ type: "spring", stiffness: 120, damping: 18 }}
-          >
+            >
             <motion.div
-              className="absolute left-0 w-full h-full bg-green-400/90 z-0"
+              className="absolute left-0 w-full h-full bg-sky-100 z-0"
               variants={BackgroundDiv}
+              transition={{ duration:0.4, ease:"circOut" }}
             />
 
             <motion.p className="relative z-10" variants={TextVariants}>

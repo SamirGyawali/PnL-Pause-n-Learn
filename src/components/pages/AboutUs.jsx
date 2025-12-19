@@ -3,7 +3,6 @@ import Button from "../atoms/button";
 import { MoveRight } from "lucide-react";
 import slide2 from "../../assets/slide2.jpg";
 import slide11 from "../../assets/slide11.jpg";
-import PnLTeams from "./PnLTeams";
 
 const AboutUs = () => {
   return (
@@ -31,7 +30,6 @@ const AboutUs = () => {
           />
         </div>
       </div>
-      <PnLTeams />
     </>
   );
 };

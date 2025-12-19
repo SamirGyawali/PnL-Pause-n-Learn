@@ -4,6 +4,7 @@ import FounderStatement from "../molecules/FounderStatement";
 import OurWorks from "../molecules/OurWorks";
 import AboutUs from "../pages/AboutUs";
 import Home from "../pages/Home";
+import PnLTeams from "../pages/PnLTeams";
 
 const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ const LandingPage = () => {
       <FounderStatement />
       <OurWorks />
       <AboutUs />
+      <PnLTeams />
     </>
   );
 };
