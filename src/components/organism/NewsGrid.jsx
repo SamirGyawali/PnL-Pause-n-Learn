@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { animate, motion } from "framer-motion";
 import slide1 from "../../assets/slide1.jpg";
 import slide2 from "../../assets/slide2.jpg";
 import slide3 from "../../assets/slide3.jpeg";
 import slide11 from "../../assets/slide11.jpg";
+import Button from "../atoms/button";
+import { MoveRight } from "lucide-react";
 
 // fetch the news data over here
 
@@ -87,28 +90,58 @@ const news = [
   },
 ];
 
+const parentContainerVariant = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 const NewsGrid = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   return (
-    <div className="mt-4 flex w-full overflow-x-scroll gap-2 rounded-2xl">
-      {news.map((item) => (
-        <div
-          className="w-[85vw] sm:w-[400px] md:w-[500px] shrink-0 cursor-pointer group hover:cursor-pointer"
-          key={item.id}
-        >
-          <img
-            src={item.image}
-            alt="image"
-            className="object-cover w-full h-[calc(100%-4rem)] rounded-2xl"
-          />
-          <div>
-            <p className="font-inter-regular text-lg p-1 group-hover:underline">{item.title}</p>
-            <span className="font-ibm-mono-semibold text-neutral-400 text-md">
-              January 2, 2022
-            </span>
-          </div>
-        </div>
-      ))}
-    </div>
+    <>
+      <motion.div className="window mt-4 flex w-full overflow-x-hidden gap-2 rounded-2xl">
+        {/* need to do some animateion tweaks here for launcing effect */}
+        {news.map((item, index) => (
+          <motion.div
+            className="w-[85vw] sm:w-[400px] md:w-[500px] shrink-0 cursor-pointer group hover:cursor-pointer"
+            custom={index}
+            key={item.id}
+            animate={{
+              x: `calc(-${currentIndex * 305.33}% - ${currentIndex * 36}px)`,
+            }}
+            transition={{ ease: "easeIn", duration: 1.3 }}
+          >
+            <img
+              src={item.image}
+              alt="image"
+              className="object-cover w-full h-[calc(100%-4rem)] rounded-2xl"
+            />
+            <div>
+              <p className="font-inter-regular text-lg p-1 group-hover:underline">
+                {item.title}
+              </p>
+              <span className="font-ibm-mono-semibold text-neutral-400 text-md">
+                January 2, 2022
+              </span>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+      <div className="flex flex-row-reverse">
+        <Button
+          icon={
+            <MoveRight
+              size={21}
+              onClick={() => setCurrentIndex((prev) => prev + 1)}
+            />
+          }
+        />
+      </div>
+    </>
   );
 };
 
