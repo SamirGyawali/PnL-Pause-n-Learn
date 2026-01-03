@@ -7,83 +7,9 @@ import { useMasonryLayout } from "../../hooks/useMasonryLayout";
 import ImageCard from "../molecules/ImageCard";
 import { useState } from "react";
 
-const items = [
-  {
-    id: 1,
-    title: "Breathing Cells at the Seoul Biennale",
-    meta: "UPDATE • INSTALLATION",
-    image: slide2,
-  },
-  {
-    id: 2,
-    title: "Shenzhen Bay Culture Park",
-    meta: "PROJECT • MASTERPLAN",
-    image: slide1,
-  },
-  {
-    id: 3,
-    title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
-    image: slide3,
-  },
-  {
-    id: 4,
-    title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
-    image: slide11,
-  },
-  {
-    id: 5,
-    title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
-    image: slide11,
-  },
-  {
-    id: 6,
-    title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
-    image: slide3,
-  },
-  {
-    id: 7,
-    title: "Harbin Opera House",
-    meta: "PROJECT • ARCHITECTURE",
-    image: slide1,
-  },
-  {
-    id: 8,
-    title: "Shenzhen Bay Culture Park",
-    meta: "PROJECT • MASTERPLAN",
-    image: slide1,
-  },
-  {
-    id: 9,
-    title: "Shenzhen Bay Culture Park",
-    meta: "PROJECT • MASTERPLAN",
-    image: slide2,
-  },
-  {
-    id: 10,
-    title: "Shenzhen Bay Culture Park",
-    meta: "PROJECT • MASTERPLAN",
-    image: slide1,
-  },
-  {
-    id: 11,
-    title: "Shenzhen Bay Culture Park",
-    meta: "PROJECT • MASTERPLAN",
-    image: slide1,
-  },
-  {
-    id: 12,
-    title: "Shenzhen Bay Culture Park",
-    meta: "PROJECT • MASTERPLAN",
-    image: slide1,
-  },
-];
 
-const MasonryLayout = () => {
-  const measured = useImageMeasurement(items);
+const MasonryLayout = ({data}) => {
+  const measured = useImageMeasurement(data);
   const { containerRef, positions, containerHeight } =
     useMasonryLayout(measured);
 
