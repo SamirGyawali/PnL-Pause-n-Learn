@@ -12,6 +12,9 @@ import slide2 from "../../assets/slide2.jpg";
 import slide3 from "../../assets/slide3.jpeg";
 import slide11 from "../../assets/slide11.jpg";
 
+import danceVideo from "../../assets/dance02.mp4";
+import danceVideo02 from "../../assets/dance03.mp4";
+
 // projects api
 export const projects = [
   {
@@ -21,6 +24,7 @@ export const projects = [
     client: "Cosmos Media",
     year: "2024",
     image: slide1,
+    video: danceVideo,
   },
   {
     id: 2,
@@ -29,6 +33,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide2,
+    video: danceVideo02,
   },
   {
     id: 3,
@@ -37,6 +42,7 @@ export const projects = [
     client: "Cosmos Media",
     year: "2024",
     image: slide3,
+    video: danceVideo,
   },
   {
     id: 4,
@@ -45,6 +51,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide11,
+    video: danceVideo02,
   },
   {
     id: 5,
@@ -53,6 +60,7 @@ export const projects = [
     client: "Cosmos Media",
     year: "2024",
     image: slide1,
+    video: danceVideo,
   },
   {
     id: 6,
@@ -61,6 +69,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide3,
+    video: danceVideo,
   },
   {
     id: 7,
@@ -69,6 +78,7 @@ export const projects = [
     client: "Cosmos Media",
     year: "2024",
     image: slide1,
+    video: danceVideo02,
   },
   {
     id: 8,
@@ -77,6 +87,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide1,
+    video: danceVideo,
   },
   {
     id: 9,
@@ -85,6 +96,7 @@ export const projects = [
     client: "Cosmos Media",
     year: "2024",
     image: slide2,
+    video: danceVideo,
   },
   {
     id: 10,
@@ -93,6 +105,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide3,
+    video: danceVideo02,
   },
   {
     id: 11,
@@ -101,6 +114,7 @@ export const projects = [
     client: "Cosmos Media",
     year: "2024",
     image: slide1,
+    video: danceVideo,
   },
   {
     id: 12,
@@ -109,6 +123,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide11,
+    video: danceVideo02,
   },
   {
     id: 13,
@@ -117,6 +132,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide2,
+    video: danceVideo,
   },
   {
     id: 14,
@@ -125,6 +141,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide11,
+    video: danceVideo,
   },
   {
     id: 15,
@@ -133,6 +150,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide2,
+    video: danceVideo,
   },
   {
     id: 16,
@@ -141,6 +159,7 @@ export const projects = [
     client: "Nebula Inc",
     year: "2023",
     image: slide1,
+    video: danceVideo02,
   },
 ];
 
@@ -296,8 +315,8 @@ const Projects = () => {
         {/* if there is other list things show them in the grid layout. */}
         <p className="text-4xl font-inter-light md:text-5xl">PNL News</p>
         <NewsGrid>
-          <NewsGrid.Cards data={news}/>
-          <NewsGrid.Controls data={news}/>
+          <NewsGrid.Cards data={news} />
+          <NewsGrid.Controls data={news} />
         </NewsGrid>
       </div>
     </div>

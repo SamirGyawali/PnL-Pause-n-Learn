@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import FeaturedWorkOverlay from "./FeaturedWorkOverlay";
 
 const BackgroundDiv = {
   initial: { top: "-100%" },
@@ -21,6 +22,7 @@ const YearVariants = {
 };
 
 export default function ProjectListTable({ data }) {
+  const [selectedWork, setSelectedWork] = useState();
   const [hoverIndex, setHoverIndex] = useState(null);
 
   const getRowState = (i) => {
@@ -44,6 +46,7 @@ export default function ProjectListTable({ data }) {
           key={item.id}
           className="grid grid-cols-4 px-3 py-3 cursor-pointer relative overflow-hidden"
           initial="initial"
+          onClick={() => setSelectedWork(item)}
           animate={getRowState(i)} // final state of animation
           whileHover="hovered"
           onHoverStart={() => setHoverIndex(i)}
@@ -85,6 +88,13 @@ export default function ProjectListTable({ data }) {
           />
         </motion.div>
       ))}
+
+      {selectedWork ? (
+        <FeaturedWorkOverlay
+          onClose={() => setSelectedWork(null)}
+          selectedWork={selectedWork}
+        />
+      ) : null}
     </div>
   );
 }

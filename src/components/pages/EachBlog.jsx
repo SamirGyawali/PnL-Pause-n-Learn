@@ -1,6 +1,6 @@
 import React from "react";
 
-const EachArticle = () => {
+const EachBlog = () => {
   return (
     <div className="min-w-screen min-h-screen p-12">
       To whom has this thought arisen?” —To me. Then inquire: “Who is this
@@ -12,4 +12,4 @@ const EachArticle = () => {
   );
 };
 
-export default EachArticle;
+export default EachBlog;

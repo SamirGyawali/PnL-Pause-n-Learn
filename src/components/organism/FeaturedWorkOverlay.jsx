@@ -6,6 +6,8 @@ import slide2 from "../../assets/slide2.jpg";
 import slide3 from "../../assets/slide3.jpeg";
 import slide11 from "../../assets/slide11.jpg";
 import danceVideo from "../../assets/dance02.mp4";
+import danceVideo02 from "../../assets/dance03.mp4";
+
 // import hosanaVideo from "../../assets/hosana.mp4";
 import useReadmore from "../../hooks/useReadmore";
 import GalleryCrousalOverlay from "./GalleryCrousalOverlay";
@@ -136,7 +138,7 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
               // loop
               autoPlay
               muted
-              src={danceVideo}
+              src={selectedWork?.video ? selectedWork.video: danceVideo}
               alt="video"
               className=" object-cover rounded-2xl"
             />

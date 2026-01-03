@@ -1,11 +1,14 @@
 import React from "react";
-import { hover, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const NewsItem = ({ data }) => {
+  const navigateTo = useNavigate();
   return (
     <div
       className="w-[85vw] sm:w-[400px] md:w-[500px] shrink-0 cursor-pointer group hover:cursor-pointer"
       key={data.id}
+      onClick={()=>navigateTo(`/news/${data.id}`)}
     >
       <div className="w-full h-[calc(100%-4rem)] rounded-2xl overflow-hidden">
         <motion.img

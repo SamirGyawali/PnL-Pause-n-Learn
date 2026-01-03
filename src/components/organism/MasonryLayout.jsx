@@ -2,6 +2,7 @@ import { useImageMeasurement } from "../../hooks/useImageMeasurement";
 import { useMasonryLayout } from "../../hooks/useMasonryLayout";
 import ImageCard from "../molecules/ImageCard";
 import { useState } from "react";
+import FeaturedWorkOverlay from "./FeaturedWorkOverlay";
 
 const MasonryLayout = ({ data }) => {
   const measured = useImageMeasurement(data);
@@ -34,6 +35,15 @@ const MasonryLayout = ({ data }) => {
           />
         );
       })}
+
+      {selectedWork ? (
+        <FeaturedWorkOverlay
+          onClose={() => {
+            setSelectedWork(null);
+          }}
+          selectedWork={selectedWork}
+        />
+      ) : null}
     </div>
   );
 };
