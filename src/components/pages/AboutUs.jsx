@@ -3,6 +3,7 @@ import Button from "../atoms/button";
 import { MoveRight } from "lucide-react";
 import slide2 from "../../assets/slide2.jpg";
 import slide11 from "../../assets/slide11.jpg";
+import myVideo from "../../assets/radhe.mp4";
 
 const AboutUs = () => {
   return (
@@ -22,11 +23,14 @@ const AboutUs = () => {
             <Button label="ABOUT US" icon={<MoveRight size={14} />} />
           </div>
         </div>
-        <div className="lg:mt-40 w-100vw lg:h-[900px]">
-          <img
-            src={slide11}
+        <div className="lg:mt-40 w-[100vw] lg:h-[900px] overflow-hidden rounded-3xl">
+          <video
+            controls
+            autoPlay
+            loop
+            src={myVideo}
             alt=""
-            className="AboutUs rounded-3xl w-full h-full object-cover"
+            className="AboutUs rounded-3xl object-cover w-full h-full"
           />
         </div>
       </div>

@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import Lenis from "lenis";
-import "lenis/dist/lenis.css";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Projects from "./components/pages/Projects";
 import Layout from "./components/templates/Layout";
@@ -12,20 +10,6 @@ import LenisProvider from "./context/lenisContext/LenisProvider";
 import EachBlog from "./components/pages/EachBlog";
 
 function App() {
-  // useEffect(() => {
-  //   // Initialize Lenis
-  //   const lenis = new Lenis();
-
-  //   // Use requestAnimationFrame to continuously update the scroll
-  //   function raf(time) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   requestAnimationFrame(raf);
-
-  //   return () => lenis.destroy();
-  // }, []);
 
   return (
     // lenis is initialized here. LenisProvider

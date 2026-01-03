@@ -3,6 +3,7 @@ import slide11 from "../../assets/slide11.jpg";
 import slide2 from "../../assets/slide2.jpg";
 import Button from "../atoms/button";
 import { MoveRight } from "lucide-react";
+import myVideo from "../../assets/radhe.mp4";
 
 const PnLTeams = () => {
   return (
@@ -20,12 +21,20 @@ const PnLTeams = () => {
           <Button label="OUR TEAM" icon={<MoveRight size={14} />} />
         </div>
       </div>
-      <div className="overflonpw-hidden xl:w-[96vw] lg:h-[900px]">
+      <div className="overflow-hidden xl:w-[96vw] lg:h-[900px]">
         <img
           src={slide2}
           alt=""
           className="rounded-2xl object-cover w-full h-full"
         />
+        {/* <video
+          controls
+          autoPlay
+          loop
+          src={myVideo}
+          alt=""
+          className="AboutUs rounded-3xl object-cover w-full h-full"
+        /> */}
       </div>
     </div>
   );

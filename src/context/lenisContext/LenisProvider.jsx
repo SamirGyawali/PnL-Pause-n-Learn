@@ -1,4 +1,5 @@
 import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 import { useRef } from "react";
 import { LenisContext } from "./LenisContext";
 
