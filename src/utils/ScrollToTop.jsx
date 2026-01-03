@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
+import { useLenis } from "../context/lenisContext/LenisContext";
 import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
   const location = useLocation();
+  const lenisRef = useLenis();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    lenisRef.current.scrollTo("start");
   }, [location.pathname]);
+
   return null;
 };
 

@@ -8,35 +8,38 @@ import LandingPage from "./components/templates/LandingPage";
 import EachArticle from "./components/pages/EachBlog";
 import EachNews from "./components/pages/EachNews";
 import ScrollToTop from "./utils/ScrollToTop";
+import LenisProvider from "./context/lenisContext/LenisProvider";
 
 function App() {
-  useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis();
+  // useEffect(() => {
+  //   // Initialize Lenis
+  //   const lenis = new Lenis();
 
-    // Use requestAnimationFrame to continuously update the scroll
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+  //   // Use requestAnimationFrame to continuously update the scroll
+  //   function raf(time) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
 
-    requestAnimationFrame(raf);
+  //   requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
-  }, []);
+  //   return () => lenis.destroy();
+  // }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<LandingPage />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="article" element={<EachArticle />} />
-          <Route path="news/:id" element={<EachNews />} />
-        </Route>
-      </Routes>
-    </Router>
+    <LenisProvider>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<LandingPage />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="article" element={<EachArticle />} />
+            <Route path="news/:id" element={<EachNews />} />
+          </Route>
+        </Routes>
+      </Router>
+    </LenisProvider>
   );
 }
 
