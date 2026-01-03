@@ -1,14 +1,9 @@
-import slide1 from "../../assets/slide1.jpg";
-import slide2 from "../../assets/slide2.jpg";
-import slide3 from "../../assets/slide3.jpeg";
-import slide11 from "../../assets/slide11.jpg";
 import { useImageMeasurement } from "../../hooks/useImageMeasurement";
 import { useMasonryLayout } from "../../hooks/useMasonryLayout";
 import ImageCard from "../molecules/ImageCard";
 import { useState } from "react";
 
-
-const MasonryLayout = ({data}) => {
+const MasonryLayout = ({ data }) => {
   const measured = useImageMeasurement(data);
   const { containerRef, positions, containerHeight } =
     useMasonryLayout(measured);

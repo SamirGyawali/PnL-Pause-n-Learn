@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-
 const BackgroundDiv = {
   initial: { top: "-100%" },
   hovered: { top: "0%" },
@@ -21,7 +20,7 @@ const YearVariants = {
   hovered: { x: -7 },
 };
 
-export default function ProjectListTable({data}) {
+export default function ProjectListTable({ data }) {
   const [hoverIndex, setHoverIndex] = useState(null);
 
   const getRowState = (i) => {
@@ -33,7 +32,7 @@ export default function ProjectListTable({data}) {
 
   return (
     <div className="w-full max-w-9xl mx-auto py-4">
-      <div className="grid grid-cols-4 px-4 py-2 text-sm uppercase text-gray-900 border-b border-sky-500">
+      <div className="grid grid-cols-4 px-4 py-2 text-sm uppercase font-ibm-mono-semibold text-gray-500 border-b border-sky-600">
         <p>Project</p>
         <p>Category</p>
         <p>Client</p>
@@ -51,7 +50,7 @@ export default function ProjectListTable({data}) {
           onHoverEnd={() => setHoverIndex(null)}
         >
           <motion.div
-            className="absolute left-0 w-full h-full bg-sky-100 z-0"
+            className="absolute left-0 w-full h-full bg-sky-200 z-0"
             variants={BackgroundDiv}
             transition={{ duration: 0.4, ease: "circOut" }}
           />
@@ -74,7 +73,7 @@ export default function ProjectListTable({data}) {
           </motion.p>
           {/* div for border for animation */}
           <motion.div
-            className="seperator-border absolute bottom-0 left-0 h-[1px] w-full bg-sky-300 origin-left"
+            className="seperator-border absolute bottom-0 left-0 h-[1px] w-full bg-sky-500 origin-left"
             initial={{ width: "0%" }}
             whileInView={{ width: "100%" }}
             viewport={{ once: true, amount: 0.3 }}

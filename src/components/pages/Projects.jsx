@@ -20,6 +20,7 @@ export const projects = [
     category: "Branding",
     client: "Cosmos Media",
     year: "2024",
+    image: slide1,
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide2,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const projects = [
     category: "Branding",
     client: "Cosmos Media",
     year: "2024",
+    image: slide3,
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide11,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const projects = [
     category: "Branding",
     client: "Cosmos Media",
     year: "2024",
+    image: slide1,
   },
   {
     id: 6,
@@ -55,6 +60,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide3,
   },
   {
     id: 7,
@@ -62,6 +68,7 @@ export const projects = [
     category: "Branding",
     client: "Cosmos Media",
     year: "2024",
+    image: slide1,
   },
   {
     id: 8,
@@ -69,6 +76,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide1,
   },
   {
     id: 9,
@@ -76,6 +84,7 @@ export const projects = [
     category: "Branding",
     client: "Cosmos Media",
     year: "2024",
+    image: slide2,
   },
   {
     id: 10,
@@ -83,6 +92,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide3,
   },
   {
     id: 11,
@@ -90,6 +100,7 @@ export const projects = [
     category: "Branding",
     client: "Cosmos Media",
     year: "2024",
+    image: slide1,
   },
   {
     id: 12,
@@ -97,6 +108,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide11,
   },
   {
     id: 13,
@@ -104,6 +116,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide2,
   },
   {
     id: 14,
@@ -111,6 +124,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide11,
   },
   {
     id: 15,
@@ -118,6 +132,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide2,
   },
   {
     id: 16,
@@ -125,6 +140,7 @@ export const projects = [
     category: "Web App",
     client: "Nebula Inc",
     year: "2023",
+    image: slide1,
   },
 ];
 
@@ -215,7 +231,7 @@ const Projects = () => {
   const params = new URLSearchParams(search);
   const category = params.get("category");
 
-  const [listView, setListView] = useState(true);
+  const [listView, setListView] = useState(false);
   return (
     <div className="w-full px-3 pt-[49px] pb-3">
       <div className="m-2 p-2 flex flex-col gap-5 mt-6">
@@ -279,7 +295,10 @@ const Projects = () => {
       <div className="m-2 p-11">
         {/* if there is other list things show them in the grid layout. */}
         <p className="text-4xl font-inter-light md:text-5xl">PNL News</p>
-        <NewsGrid data={news} />
+        <NewsGrid>
+          <NewsGrid.Cards data={news}/>
+          <NewsGrid.Controls data={news}/>
+        </NewsGrid>
       </div>
     </div>
   );
