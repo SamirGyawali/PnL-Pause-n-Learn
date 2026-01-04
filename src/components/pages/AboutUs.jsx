@@ -27,6 +27,7 @@ const AboutUs = () => {
           <video
             controls
             autoPlay
+            muted
             loop
             src={myVideo}
             alt=""
