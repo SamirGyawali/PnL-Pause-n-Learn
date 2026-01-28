@@ -13,17 +13,18 @@ export function useImageMeasurement(data) {
             img.onload = () =>
               resolve({ ...item, aspectRatio: img.width / img.height });
             img.src = item.image;
-          })
-      )
+          }),
+      ),
     );
   }
 
   useEffect(() => {
     (async function () {
+      if (!data) return;
       const result = await DataFormatter(data);
       setMeasured(result);
     })();
-  }, []);
+  }, [data]);
 
   return measured;
 }
