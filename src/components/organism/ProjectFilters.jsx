@@ -49,7 +49,7 @@ ProjectFilters.Tabs = ({ options, selected, setTab }) => {
   );
 };
 
-ProjectFilters.ControlsWithDropdown = ({ label, id, options }) => {
+ProjectFilters.ButtonWithDropdown = ({ label, id, options }) => {
   const { activeFilters, onToggleFilter, openGroup, toggleGroup } =
     useContext(FilterContext);
   const isOpen = openGroup === id;
@@ -73,7 +73,7 @@ ProjectFilters.ControlsWithDropdown = ({ label, id, options }) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-10 left-0 min-w-[200px] rounded-xl p-3 bg-black/30 backdrop-blur-md z-50 flex flex-col gap-2"
+            className="absolute top-10 left-0 min-w-[200px] rounded-xl p-3 bg-black/45 backdrop-blur-md z-50 flex flex-col gap-2"
           >
             {options.map((opt) => (
               <label
