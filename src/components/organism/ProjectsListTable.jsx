@@ -37,7 +37,7 @@ export default function ProjectListTable({ data }) {
       <div className="grid grid-cols-4 px-4 py-2 text-sm uppercase font-ibm-mono-semibold text-gray-500 border-b border-sky-600">
         <p>Project</p>
         <p>Category</p>
-        <p>Client</p>
+        <p>Location</p>
         <p>Year</p>
       </div>
 
@@ -65,7 +65,7 @@ export default function ProjectListTable({ data }) {
             {item.category}
           </motion.p>
           <motion.p className="relative z-10" variants={TextVariants}>
-            {item.client}
+            {item.location}
           </motion.p>
           <motion.p
             className="relative z-10"
