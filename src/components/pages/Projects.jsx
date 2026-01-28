@@ -14,6 +14,8 @@ import slide11 from "../../assets/slide11.jpg";
 import danceVideo from "../../assets/dance02.mp4";
 import danceVideo02 from "../../assets/dance03.mp4";
 import { ProjectFilters } from "../organism/ProjectFilters";
+import Button from "../atoms/button";
+import { Grip, List } from "lucide-react";
 
 // fetch the news data over here
 const news = [
@@ -321,13 +323,17 @@ const Projects = () => {
         />
         <div className="flex gap-5">
           {filters.map((item) => (
-            <ProjectFilters.ControlsWithDropdown
+            <ProjectFilters.ButtonWithDropdown
               key={item.id}
               label={item.name}
               id={item.id}
               options={item.options}
             />
           ))}
+          <Button
+            icon={listView ? <Grip size={20} /> : <List size={20} />}
+            onClick={() => setListView(!listView)}
+          />
         </div>
       </ProjectFilters>
       <div className="m-2 p-2 mt-9">
