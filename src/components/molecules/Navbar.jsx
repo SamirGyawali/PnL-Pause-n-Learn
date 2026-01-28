@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../atoms/button";
 import { PhoneIcon, Search, UserRound } from "lucide-react";
 import logo from "../../assets/logonav.png";
@@ -17,11 +17,9 @@ const Navbar = () => {
         <Button
           label="UPDATES"
           icon={
-            <div className="w-1.5 h-1.5 bg-green-400 rounded-lg animate-pulse">
-              {" "}
-            </div>
+            <div className="w-1.5 h-1.5 bg-green-400 rounded-lg animate-pulse"></div>
           }
-        />
+         />
         <Button label="BLOGS" />
         <Button label="LOGIN" icon={<UserRound size={15} />} />
         <Button icon={<Search size={15} />} />

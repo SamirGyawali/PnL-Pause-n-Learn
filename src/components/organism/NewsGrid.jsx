@@ -7,7 +7,7 @@ import NewsItem from "../molecules/NewsItem";
 const NewsGridContext = createContext();
 
 const NewsGrid = ({ children }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // to track how much should i allow the next / previous buttons clicking
 
   return (
     <>

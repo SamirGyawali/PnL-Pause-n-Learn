@@ -44,13 +44,15 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
       <motion.div
         className="w-full h-[95dvh] max-w-[160vh] bg-[rgb(255,255,255)] rounded-2xl p-3 backdrop-blur-[20px] md:h-[92%]"
         drag
-        dragElastic={0.04}
         dragConstraints={{
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
         }}
+        dragTransition={{ bounceStiffness: 400, bounceDamping: 15 }}
+        dragElastic={0.02}
+        whileDrag={{ cursor: "grabbing" }}
         variants={whiteContainerVariant}
         initial="initial"
         animate="final"
@@ -138,7 +140,7 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
               // loop
               autoPlay
               muted
-              src={selectedWork?.video ? selectedWork.video: danceVideo}
+              src={selectedWork?.video ? selectedWork.video : danceVideo}
               alt="video"
               className=" object-cover rounded-2xl"
             />
