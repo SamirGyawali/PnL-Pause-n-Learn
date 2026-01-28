@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Button = ({ label, icon, onClick, className }) => {
   return (
@@ -18,6 +19,34 @@ const Button = ({ label, icon, onClick, className }) => {
       ) : null}
       {icon ? <span className="-translate-y-[1.5px]">{icon}</span> : null}
     </button>
+  );
+};
+
+export const SliderButton = ({
+  upperLabel,
+  lowerLabel,
+  isActive,
+  setIsActive,
+  className
+}) => {
+  return (
+    <div
+      className={`h-[30px] w-[40px] flex flex-col items-center justify-center overflow-hidden cursor-pointer rounded-lg ${className}`}
+      onClick={() => setIsActive(!isActive)}
+    >
+      <motion.div
+        className="slider relative w-full h-full"
+        animate={{ top: isActive ? "-100%" : "0" }}
+        transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+      >
+        <span className="block w-full h-full bg-[#169edd] text-black flex justify-center items-center">
+          {upperLabel}
+        </span>
+        <span className="block w-full h-full bg-[#141414] text-[#a0f700] flex justify-center items-center absolute top-[100%]">
+          {lowerLabel}
+        </span>
+      </motion.div>
+    </div>
   );
 };
 

@@ -269,7 +269,7 @@ export const projects = [
 const filters = [
   {
     id: "location",
-    name: "LOCATION",
+    label: "LOCATION",
     options: [
       { value: "Nepal Himalayas", label: "Nepal Himalayas" },
       { value: "Haridwar india", label: "Haridwar" },
@@ -277,7 +277,7 @@ const filters = [
   },
   {
     id: "status",
-    name: "STATUS",
+    label: "STATUS",
     options: [
       { value: "Ongoing", label: "Ongoing" },
       { value: "Completed", label: "Completed" },
@@ -285,7 +285,7 @@ const filters = [
   },
   {
     id: "year",
-    name: "YEAR",
+    label: "YEAR",
     options: [
       { value: "2022", label: "2022" },
       { value: "2024", label: "2024" },
@@ -325,7 +325,7 @@ const Projects = () => {
           {filters.map((item) => (
             <ProjectFilters.ButtonWithDropdown
               key={item.id}
-              label={item.name}
+              label={item.label}
               id={item.id}
               options={item.options}
             />
