@@ -9,6 +9,7 @@ import Button from "../atoms/button";
 import { MoveRight } from "lucide-react";
 import ImageCard from "../molecules/ImageCard";
 import FeaturedWorkOverlay from "./FeaturedWorkOverlay";
+import { useNavigate } from "react-router-dom";
 
 const items = [
   {
@@ -68,6 +69,9 @@ const items = [
 ];
 
 const MyJustifiedLayout = () => {
+
+  const navigateTo = useNavigate();
+
   const measured = useImageMeasurement(items);
 
   const containerRef = useRef(null);
@@ -126,7 +130,7 @@ const MyJustifiedLayout = () => {
       </div>
       {/* when clicked fetch data, change state, and update the layout */}
       <div className="flex justify-center items-center mt-15 mb-15">
-        <Button label="Load More" icon={<MoveRight strokeWidth={1.25} />} />
+        <Button onClick={()=>navigateTo("projects")} label="All works" icon={<MoveRight strokeWidth={1.25} />} />
       </div>
 
       {selectedWork ? (

@@ -31,7 +31,7 @@ export const SliderButton = ({
 }) => {
   return (
     <div
-      className={`h-[30px] w-[40px] flex flex-col items-center justify-center overflow-hidden cursor-pointer rounded-lg ${className}`}
+      className={`h-[30px] w-[40px] flex flex-col items-center justify-center overflow-hidden cursor-pointer rounded-lg z-50 ${className}`}
       onClick={() => setIsActive(!isActive)}
     >
       <motion.div
@@ -39,10 +39,10 @@ export const SliderButton = ({
         animate={{ top: isActive ? "-100%" : "0" }}
         transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
       >
-        <span className="block w-full h-full bg-[#169edd] text-black flex justify-center items-center">
+        <span className="block w-full h-full bg-[#c7c7c788] text-black flex justify-center items-center">
           {upperLabel}
         </span>
-        <span className="block w-full h-full bg-[#141414] text-[#a0f700] flex justify-center items-center absolute top-[100%]">
+        <span className="block w-full h-full bg-[#141414] text-white flex justify-center items-center absolute top-[100%]">
           {lowerLabel}
         </span>
       </motion.div>
