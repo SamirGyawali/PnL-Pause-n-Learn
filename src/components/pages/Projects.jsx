@@ -108,7 +108,7 @@ export const projects = [
     location: "Nepal Himalayas",
     status: "Ongoing",
     year: "2024",
-    image: slide1,
+    images: [slide1, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -118,7 +118,7 @@ export const projects = [
     location: "Haridwar india",
     status: "Completed",
     year: "2023",
-    image: slide2,
+    images: [slide3, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo02,
   },
   {
@@ -128,7 +128,7 @@ export const projects = [
     location: "Vrindavan india",
     status: "Completed",
     year: "2024",
-    image: slide3,
+    images: [slide2, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -138,7 +138,7 @@ export const projects = [
     location: "Vrindavan india",
     status: "Ongoing",
     year: "2023",
-    image: slide11,
+    images: [slide11, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo02,
   },
   {
@@ -148,7 +148,7 @@ export const projects = [
     location: "Nepal Himalayas",
     status: "Ongoing",
     year: "2024",
-    image: slide1,
+    images: [slide1, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -158,7 +158,7 @@ export const projects = [
     location: "Nepal Himalayas",
     status: "Completed",
     year: "2023",
-    image: slide3,
+    images: [slide3, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -168,7 +168,7 @@ export const projects = [
     location: "Vrindavan india",
     status: "Completed",
     year: "2024",
-    image: slide1,
+    images: [slide3, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo02,
   },
   {
@@ -178,7 +178,7 @@ export const projects = [
     location: "Haridwar india",
     status: "Ongoing",
     year: "2023",
-    image: slide1,
+    images: [slide11, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -187,9 +187,8 @@ export const projects = [
     category: "Retreats",
     location: "Vrindavan india",
     status: "Ongoing",
-
     year: "2024",
-    image: slide2,
+    images: [slide1, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -199,7 +198,7 @@ export const projects = [
     location: "Nepal Himalayas",
     status: "Completed",
     year: "2023",
-    image: slide3,
+    images: [slide1, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo02,
   },
   {
@@ -209,7 +208,7 @@ export const projects = [
     location: "Vrindavan india",
     status: "Ongoing",
     year: "2024",
-    image: slide1,
+    images: [slide2, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -219,7 +218,7 @@ export const projects = [
     location: "Haridwar india",
     status: "Ongoing",
     year: "2023",
-    image: slide11,
+    images: [slide1, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo02,
   },
   {
@@ -229,7 +228,7 @@ export const projects = [
     location: "Haridwar india",
     status: "Ongoing",
     year: "2023",
-    image: slide2,
+    images: [slide2, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -239,7 +238,7 @@ export const projects = [
     location: "Vrindavan india",
     status: "Completed",
     year: "2023",
-    image: slide11,
+    images: [slide11, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -249,7 +248,7 @@ export const projects = [
     location: "Haridwar india",
     status: "Ongoing",
     year: "2023",
-    image: slide2,
+    images: [slide1, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo,
   },
   {
@@ -259,7 +258,7 @@ export const projects = [
     location: "Haridwar india",
     status: "Completed",
     year: "2023",
-    image: slide1,
+    images: [slide2, slide2, slide3, slide11, slide2, slide1, slide2],
     video: danceVideo02,
   },
 ];

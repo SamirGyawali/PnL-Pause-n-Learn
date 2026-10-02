@@ -1,10 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { cn } from "../../lib/utils";
 
-const Button = ({ label, icon, onClick, className }) => {
+const Button = ({ label, icon, onClick, className, disabled }) => {
   return (
     <button
-      className={`px-2.5 py-1.5 bg-neutral-400/20 rounded-lg flex gap-2 items-center hover:cursor-pointer hover:bg-neutral-400/30 w-fit group cursor-pointer ${className}`}
+    disabled={disabled}
+      className={cn("px-2.5 py-1.5 bg-neutral-400/20 rounded-lg flex gap-2 items-center hover:cursor-pointer hover:bg-neutral-400/30 w-fit group cursor-pointer", className)}
       onClick={onClick}
     >
       {label ? (

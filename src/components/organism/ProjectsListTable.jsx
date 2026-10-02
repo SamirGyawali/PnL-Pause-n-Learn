@@ -23,6 +23,7 @@ const YearVariants = {
 
 export default function ProjectListTable({ data }) {
   const [selectedWork, setSelectedWork] = useState();
+  console.log(selectedWork);
   const [hoverIndex, setHoverIndex] = useState(null);
 
   const getRowState = (i) => {

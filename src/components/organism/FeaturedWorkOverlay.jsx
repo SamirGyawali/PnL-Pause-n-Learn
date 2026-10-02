@@ -32,6 +32,8 @@ const FeaturedWorkOverlay = ({ onClose, selectedWork }) => {
     showReadmoreButton,
   } = useReadmore();
 
+  console.log(selectedWork)
+
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   return (
     <motion.div

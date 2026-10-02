@@ -3,48 +3,48 @@
 @font-face {
   font-family: "inter-regular";
   font-display: swap;
-  src: url("/fonts/inter-regular.ttf") format("truetype");
+  src: url("/public/fonts/inter-regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "inter-light";
   font-display: swap;
-  src: url("/fonts/inter-light.ttf") format("truetype");
+  src: url("/public/fonts/inter-light.ttf") format("truetype");
 }
 @font-face {
   font-family: "inter-black";
   font-display: swap;
-  src: url("/fonts/inter-black.ttf") format("truetype");
+  src: url("/public/fonts/inter-black.ttf") format("truetype");
 }
 @font-face {
   font-family: "inter-bold";
   font-display: swap;
-  src: url("/fonts/inter-bold.ttf") format("truetype");
+  src: url("/public/fonts/inter-bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "inter-extrabold";
   font-display: swap;
-  src: url("/fonts/inter-extrabold.ttf") format("truetype");
+  src: url("/public/fonts/inter-extrabold.ttf") format("truetype");
 }
 @font-face {
   font-family: "inter-extralight";
   font-display: swap;
-  src: url("/fonts/inter-extralight.ttf") format("truetype");
+  src: url("/public/fonts/inter-extralight.ttf") format("truetype");
 }
 @font-face {
   font-family: "inter-medium";
   font-display: swap;
-  src: url("/fonts/inter-medium.ttf") format("truetype");
+  src: url("/public/fonts/inter-medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "inter-semibold";
   font-display: swap;
-  src: url("/fonts/inter-semibold.ttf") format("truetype");
+  src: url("/public/fonts/inter-semibold.ttf") format("truetype");
 }
 @font-face {
   font-family: "inter-thin";
   font-display: swap;
-  src: url("/fonts/inter-thin.ttf") format("truetype");
+  src: url("/public/fonts/inter-thin.ttf") format("truetype");
 }
 
 @font-face {

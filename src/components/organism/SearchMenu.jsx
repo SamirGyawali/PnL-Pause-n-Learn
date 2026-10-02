@@ -1,7 +1,16 @@
 import { createContext, useContext, useState } from "react";
 import { SliderButton } from "../atoms/button";
 import { EyeClosed, Search } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import {
+  motion,
+  AnimatePresence,
+  backOut,
+  backIn,
+  easeOut,
+  easeInOut,
+  backInOut,
+  easeIn,
+} from "motion/react";
 
 const SearchMenuContext = createContext();
 
@@ -32,12 +41,12 @@ SearchMenu.TriggerButton = () => {
 };
 
 SearchMenu.Content = ({ children }) => {
-  const { isActive } = useContext(SearchMenuContext);
+  const { isActive, setIsActive } = useContext(SearchMenuContext);
   const menuVariant = {
     open: {
       opacity: 1,
-      width: 580,
-      height: 650,
+      width: 580, // need to make this responsive
+      height: "90vh",
     },
     closed: {
       opacity: 0,
@@ -49,15 +58,21 @@ SearchMenu.Content = ({ children }) => {
   return (
     <AnimatePresence mode="wait">
       {isActive && (
-        <motion.div className="fixed w-screen h-screen inset-0 z-40 bg-[rgba(1,1,1,0.37)] backdrop-blur-[20px]">
+        <motion.div
+          className="fixed w-screen h-screen inset-0 z-40 bg-[rgba(1,1,1,0.06)]"
+          initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+          animate={{ opacity: 1, backdropFilter: "blur(5px)" }}
+          exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+          onClick={() => setIsActive(false)}
+        >
           <motion.div
             key="menu"
-            className="menu fixed top-13 right-7 h-[650px] w-[480px] bg-[#f8f8f8] rounded-xl shadow-2xl shadow-black/30 ring-4 ring-black/10 z-50 p-4"
+            className="menu fixed top-13 right-7 bg-[#f8f8f8] rounded-xl shadow-2xl shadow-black/30 ring-4 ring-black/10 z-50 p-4"
             variants={menuVariant}
             animate={isActive ? "open" : "closed"}
             initial="closed"
             exit="closed"
-            transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+            transition={{ duration: 0.5, ease: easeIn }}
           >
             {children}
           </motion.div>

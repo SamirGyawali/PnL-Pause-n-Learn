@@ -9,10 +9,16 @@ export function useImageMeasurement(data) {
       items.map(
         (item, index) =>
           new Promise((resolve) => {
+            const src = item.images?.[0];
+            if (!src) {
+              // if image list is empty
+              resolve({ ...item, aspectRatio: 1 });
+              return;
+            }
             const img = new Image();
-            img.onload = () =>
-              resolve({ ...item, aspectRatio: img.width / img.height });
-            img.src = item.image;
+            img.onload = () => resolve({ ...item, aspectRatio: img.width / img.height });
+            img.onerror = () => resolve({ ...item, aspectRatio: 1 });
+            img.src = src
           }),
       ),
     );

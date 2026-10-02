@@ -5,7 +5,7 @@ import Layout from "./components/templates/Layout";
 import LandingPage from "./components/templates/LandingPage";
 import EachArticle from "./components/pages/EachBlog";
 import EachNews from "./components/pages/EachNews";
-import ScrollToTop from "./utils/ScrollToTop";
+import ScrollToTop from "./lib/ScrollToTop";
 import LenisProvider from "./context/lenisContext/LenisProvider";
 import EachBlog from "./components/pages/EachBlog";
 

@@ -12,27 +12,27 @@ import { useNavigate } from "react-router-dom";
 const slides = [
   {
     id: 1,
-    title: "Gridhar gopal hare krishna hare krishna krishna krishna hare hare",
+    title: "Blog number 1",
     meta: "UPDATE • INSTALLATION",
     image: slide1,
   },
   {
     id: 2,
     title:
-      "Hare krishna Hare krishna krishna hare hare hare ram hare ram ram hare hare",
+      "Blog number 2",
     meta: "PROJECT • MASTERPLAN",
     image: slide2,
   },
   {
     id: 3,
-    title: "Jay Jagannath, hare krishna hare krishna krishna hare hare",
+    title: "Blog number 3",
     meta: "PROJECT • ARCHITECTURE",
     image: slide3,
   },
   {
     id: 4,
     title:
-      "Hare Ram Hare Ram Ram Ram hare hare, hare krishna hare krishna krishna hare hare",
+      "Blog number 4",
     meta: "PROJECT • ARCHITECTURE",
     image: slide11,
   },

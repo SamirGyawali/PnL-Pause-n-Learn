@@ -23,8 +23,7 @@ const Crousal = () => {
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         speed={600}
-        modules={[Navigation, FreeMode]}
-        freeMode={true}
+        modules={[Navigation]}
         spaceBetween={10}
         className="mySwiper w-full h-full rounded-2xl"
       >

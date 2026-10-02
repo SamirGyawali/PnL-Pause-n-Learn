@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import Button from "../atoms/button";
 import { MoveLeft, MoveRight } from "lucide-react";
 import NewsItem from "../molecules/NewsItem";
+import { cn } from "../../lib/utils";
 
 const NewsGridContext = createContext();
+const ITEMS_PER_PAGE = 3;
 
 const NewsGrid = ({ children }) => {
   const [currentIndex, setCurrentIndex] = useState(0); // to track how much should i allow the next / previous buttons clicking
@@ -12,7 +14,7 @@ const NewsGrid = ({ children }) => {
   return (
     <>
       <NewsGridContext.Provider value={{ currentIndex, setCurrentIndex }}>
-        <div className="news-grid-container">{children}</div>
+        <div className="news-grid-container max-w-screen">{children}</div>
       </NewsGridContext.Provider>
     </>
   );
@@ -42,24 +44,31 @@ NewsGrid.Cards = ({ data }) => {
 NewsGrid.Controls = ({ data }) => {
   const { currentIndex, setCurrentIndex } = useContext(NewsGridContext);
 
+  const maxIndex = Math.max(0, Math.ceil(data.length / ITEMS_PER_PAGE) - 1);
+  const isAtStart = currentIndex <= 0;
+  const isAtEnd = currentIndex >= maxIndex;
+
   return (
     <div className="flex gap-2 flex-row-reverse">
       <Button
+        disabled={isAtEnd}
         onClick={() => {
-          if (currentIndex < data.length / 3) {
-            // replace data with pagination from backend
+          if (!isAtEnd) {
             setCurrentIndex((prev) => prev + 1);
           }
         }}
         icon={<MoveRight size={21} />}
+        className={cn(isAtEnd && "opacity-40 cursor-not-allowed")}
       />
       <Button
+      disabled={isAtStart}
         onClick={() => {
-          if (currentIndex > 0) {
+          if (!isAtStart) {
             setCurrentIndex((prev) => prev - 1);
           }
-        }} // here, need to make the state not be able to reduce below 0
+        }}
         icon={<MoveLeft size={21} />}
+        className={cn(isAtStart && "opacity-40 cursor-not-allowed")}
       />
     </div>
   );
